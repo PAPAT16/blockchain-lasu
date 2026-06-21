@@ -600,9 +600,11 @@ export default function App() {
           </div>
         </section>
 
+      </div>
+
         <hr className="border-[#2A2A2A]" />
 
-        {/* 6. GALLERY - White background section */}
+        {/* 6. GALLERY - White background section (full-width) */}
         <section id="gallery" className="py-24 space-y-12 scroll-mt-14 bg-white">
           <div className="space-y-3 max-w-[1200px] mx-auto px-6">
             <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight">
@@ -660,6 +662,8 @@ export default function App() {
             </a>
           </div>
         </section>
+
+      <div className="max-w-[1200px] mx-auto px-6">
 
         <hr className="border-[#2A2A2A]" />
 
