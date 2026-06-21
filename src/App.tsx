@@ -423,15 +423,14 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 3. PARTNER LOGO STRIP - Floating text wordmarks */}
-        <section className="py-12 overflow-hidden">
+        <section className="py-12 overflow-hidden bg-white">
           <div className="relative w-full flex overflow-x-hidden">
             <div className="animate-ticker flex whitespace-nowrap gap-16 items-center">
               {PARTNER_LOGOS.map((pt, idx) => (
                 <span 
                   key={idx} 
-                  className="text-[#AAAAAA] font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#E8001D] transition-colors"
+                  className="text-gray-500 font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#E8001D] transition-colors"
                 >
-                  /* REPLACE: real partner logo */
                   {pt.name}
                 </span>
               ))}
@@ -439,7 +438,7 @@ export default function App() {
               {PARTNER_LOGOS.map((pt, idx) => (
                 <span 
                   key={`dup-${idx}`} 
-                  className="text-[#AAAAAA] font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#E8001D] transition-colors"
+                  className="text-gray-500 font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#E8001D] transition-colors"
                 >
                   /* REPLACE: real partner logo */
                   {pt.name}
@@ -537,7 +536,6 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {EVENTS.map((evt, idx) => {
-              // Standard vs Highly featured custom card with the ultimate Orchid Flash background overlay style!
               const isOrchidFeatured = evt.isFeatured;
               return (
                 <motion.div 
@@ -547,13 +545,22 @@ export default function App() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.175, 0.885, 0.32, 1.275] }}
                   whileHover={{ y: -6, scale: 1.01 }}
-                  className={`rounded-[36px] p-8 flex flex-col justify-between relative shadow-md transition-all duration-300 ${
+                  className={`rounded-[36px] flex flex-col relative shadow-md transition-all duration-300 overflow-hidden ${
                     isOrchidFeatured 
                       ? 'bg-gradient-to-tr from-[#9B0011] to-[#E8001D] text-white border border-[#E8001D]/40 shadow-[0_0_30px_rgba(232,0,29,0.25)] hover:shadow-[0_0_40px_rgba(232,0,29,0.45)]' 
                       : 'bg-[#111111] border border-[#2A2A2A] hover:border-[#E8001D]/50 text-white hover:shadow-[0_0_20px_rgba(232,0,29,0.1)]'
                   }`}
                 >
-                  <div className="space-y-6">
+                  {evt.imageUrl && (
+                    <div className="aspect-[16/9] overflow-hidden bg-[#1A1A1A]">
+                      <img 
+                        src={evt.imageUrl} 
+                        alt={evt.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="p-8 space-y-6 flex flex-col flex-1">
                     {/* Badge Row */}
                     <div className="flex items-center justify-between">
                       <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full ${
@@ -579,24 +586,24 @@ export default function App() {
                       </div>
                     </div>
 
-                    <p className={`text-[13px] leading-[1.6] ${
+                    <p className={`text-[13px] leading-[1.6] flex-1 ${
                       isOrchidFeatured ? 'text-white/90' : 'text-[#AAAAAA]'
                     }`}>
                       {evt.description}
                     </p>
-                  </div>
 
-                  {evt.isFeatured && (
-                    <div className="pt-6 mt-6 border-t border-white/20">
-                      <button 
-                        onClick={handleJoinNow}
-                        className="bg-white text-black text-[13px] font-bold px-5 py-2.5 rounded-full hover:bg-[#E8001D] hover:text-white transition-all cursor-pointer inline-flex items-center gap-2 shadow-lg"
-                      >
-                        <span>Register Now</span>
-                        <ArrowRight size={14} className="text-[#E8001D]" />
-                      </button>
-                    </div>
-                  )}
+                    {evt.isFeatured && (
+                      <div className="pt-6 mt-6 border-t border-white/20">
+                        <button 
+                          onClick={handleJoinNow}
+                          className="bg-white text-black text-[13px] font-bold px-5 py-2.5 rounded-full hover:bg-[#E8001D] hover:text-white transition-all cursor-pointer inline-flex items-center gap-2 shadow-lg"
+                        >
+                          <span>Register Now</span>
+                          <ArrowRight size={14} className="text-[#E8001D]" />
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </motion.div>
               );
             })}
@@ -609,58 +616,47 @@ export default function App() {
         {/* 6. GALLERY - White background section (full-width) */}
         <section id="gallery" className="py-24 space-y-12 scroll-mt-14 bg-white">
           <div className="space-y-3 max-w-[1200px] mx-auto px-6">
-            <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight">
+            <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight fade-up-element opacity-0 translate-y-8">
               Our Moments
             </h2>
-            <p className="text-[16px] text-gray-500">
+            <p className="text-[16px] text-gray-500 fade-up-element opacity-0 translate-y-8">
               Real events. Real people. Real impact.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto px-6">
-            {GALLERY_ITEMS.map((item, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto px-6">
+            {GALLERY_ITEMS.map((item, idx) => (
               <a 
                 href={item.imageUrl}
                 key={item.id} 
-                className="glightbox group bg-white rounded-[36px] p-4 border border-gray-200 overflow-hidden shadow-sm hover:border-[#E8001D] hover:shadow-md transition-all block"
+                className="glightbox group block fade-up-element opacity-0 translate-y-8"
+                style={{ transitionDelay: `${idx * 0.1}s` }}
                 data-gallery="club-moments"
                 data-description={item.caption}
               >
-                {/* Image Wrap */}
-                <div className="aspect-[3/2] overflow-hidden relative bg-gray-100 rounded-[24px]">
+                <div className="aspect-[4/3] overflow-hidden bg-gray-100 rounded-xl">
                   <img 
                     src={item.imageUrl} 
                     alt={item.caption} 
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-300" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" 
                   />
-                  {/* Overlay camera prompt */}
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-2 rounded-lg border border-gray-200 shadow-sm flex items-center justify-center">
-                    <Camera size={14} className="text-[#E8001D]" />
-                  </div>
                 </div>
-
-                {/* Caption description */}
-                <div className="p-3.5 flex items-center justify-between">
-                  <span className="text-[13px] text-gray-900 font-bold">
-                    {item.caption}
-                  </span>
-                  <span className="text-gray-400 text-xs font-mono">
-                    [{index + 1}/{GALLERY_ITEMS.length}]
-                  </span>
-                </div>
+                <p className="mt-3 text-[14px] text-gray-700 font-medium">
+                  {item.caption}
+                </p>
               </a>
             ))}
           </div>
 
-          <div className="pt-4 flex justify-start max-w-[1200px] mx-auto px-6">
+          <div className="pt-2 flex justify-start max-w-[1200px] mx-auto px-6 fade-up-element opacity-0 translate-y-8">
             <a 
               href="https://x.com/BlockchainLASU" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-2 group text-[13px] font-semibold"
+              className="text-gray-400 hover:text-gray-700 transition-colors inline-flex items-center gap-1.5 group text-[13px]"
             >
-              Follow us on X for more <span className="group-hover:translate-x-1.5 transition-transform text-[#E8001D]">→</span>
+              Follow us on X for more <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </div>
         </section>
@@ -670,7 +666,7 @@ export default function App() {
         {/* 7. TEAM SECTION - Redesigned Card Layout */}
         <section id="team" className="py-24 space-y-12 scroll-mt-14">
           <div className="max-w-[1200px] mx-auto px-6">
-          <div className="space-y-4">
+          <div className="space-y-4 fade-up-element opacity-0 translate-y-8">
             <h2 className="text-[44px] font-bold text-white leading-tight max-w-2xl tracking-tight">
               A team who is not afraid to take risks and bet on themselves.
             </h2>
@@ -680,10 +676,11 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {TEAM_MEMBERS.map((member) => (
+            {TEAM_MEMBERS.map((member, idx) => (
               <div 
                 key={member.id} 
-                className="bg-[#111111] p-4 rounded-[32px] border border-[#2A2A2A] hover:border-[#E8001D] transition-all duration-300 group"
+                className="bg-[#111111] p-4 rounded-[32px] border border-[#2A2A2A] hover:border-[#E8001D] transition-all duration-300 group fade-up-element opacity-0 translate-y-8"
+                style={{ transitionDelay: `${idx * 0.08}s` }}
               >
                 {/* Image */}
                 <div className="aspect-square rounded-[24px] overflow-hidden mb-6 bg-[#181818]">
@@ -1294,7 +1291,7 @@ export default function App() {
         <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           
           {/* Column 1: Brand details */}
-          <div className="md:col-span-5 space-y-4">
+          <div className="md:col-span-5 space-y-4 fade-up-element opacity-0 translate-y-8">
             <button 
               onClick={() => handleScrollTo('home')} 
               className="flex items-center gap-2 font-[700] text-gray-900 hover:text-[#E8001D] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
@@ -1308,7 +1305,7 @@ export default function App() {
           </div>
 
           {/* Column 2: Quick links */}
-          <div className="md:col-span-4 space-y-3">
+          <div className="md:col-span-4 space-y-3 fade-up-element opacity-0 translate-y-8" style={{ transitionDelay: '0.1s' }}>
             <h4 className="font-sans text-[11px] text-gray-500 font-bold tracking-wider uppercase">Quick Links</h4>
             <div className="grid grid-cols-2 gap-2">
               {['home', 'about', 'events', 'gallery', 'team', 'partners', 'membership', 'contact'].map((link) => (
@@ -1324,7 +1321,7 @@ export default function App() {
           </div>
 
           {/* Column 3: Social list */}
-          <div className="md:col-span-3 space-y-3">
+          <div className="md:col-span-3 space-y-3 fade-up-element opacity-0 translate-y-8" style={{ transitionDelay: '0.2s' }}>
             <h4 className="font-sans text-[11px] text-gray-500 font-bold tracking-wider uppercase">Social Channels</h4>
             <div className="flex flex-col gap-2 text-[13px] text-gray-500">
               <a href="https://x.com/BlockchainLASU" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">Twitter/X</a>
@@ -1338,10 +1335,10 @@ export default function App() {
         </div>
 
         {/* Bottom bar */}
-        <div className="max-w-[1200px] mx-auto px-6 pt-8 border-t border-gray-200">
+        <div className="max-w-[1200px] mx-auto px-6 pt-8 border-t border-gray-200 fade-up-element opacity-0 translate-y-8" style={{ transitionDelay: '0.3s' }}>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-gray-500">
-            <span>© 2025 Blockchain Club, Lagos State University. All rights reserved.</span>
-            <span>Built by the LASU Blockchain Community</span>
+            <span>© 2026 Blockchain Club, Lagos State University. All rights reserved.</span>
+            <span>Built by <a href="https://lumabrand.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-[#E8001D] underline">lumabrand</a> for LASU Blockchain Community</span>
           </div>
         </div>
       </footer>

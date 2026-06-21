@@ -16,6 +16,7 @@ export interface ClubEvent {
   title: string;
   hostOrVenue: string; // e.g. Web3bridge Africa, LASU Main Campus
   description: string;
+  imageUrl?: string;
 }
 
 export interface Partner {

@@ -112,3 +112,13 @@
   transform-origin: bottom left;
 }
 
+/* Scroll fade-up animation */
+.fade-up-element {
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Stagger animation for grid items */
+.stagger-item {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+

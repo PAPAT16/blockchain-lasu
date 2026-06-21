@@ -46,23 +46,26 @@ export const EVENTS: ClubEvent[] = [
     category: "CONFERENCE",
     title: "Web3 Lagos Conference",
     hostOrVenue: "Web3bridge Africa",
-    description: "Members attended and volunteered at the Web3bridge Africa annual conference — linking up with blockchain communities across Nigerian universities."
+    description: "Members attended and volunteered at the Web3bridge Africa annual conference — linking up with blockchain communities across Nigerian universities.",
+    imageUrl: "https://files.catbox.moe/n5z5fw.jpg"
   },
   {
     id: "EVT-002",
     status: "PAST",
-    category: "WORKSHOP · IRL",
-    title: "Campus Blockchain Bootcamp",
-    hostOrVenue: "LASU Main Campus",
-    description: "Hands-on training session on blockchain fundamentals, Solidity basics, and Web3 career paths — open to all LASU students."
+    category: "MEETUP · IRL",
+    title: "Community Builder Night",
+    hostOrVenue: "Lagos",
+    description: "A Web3 community builder meetup organized by Consensys, MetaMask, and Linea — featuring founders, developers, and community leaders across the Nigerian blockchain ecosystem. Our club lead Owolabi Fawaz Oluwasina represented Blockchain Club LASU.",
+    imageUrl: "/src/assets/images/IMG-20260621-WA0003.jpg"
   },
   {
     id: "EVT-003",
-    status: "PAST",
-    category: "PANEL · IRL",
-    title: "Inter-University Web3 Roundtable",
-    hostOrVenue: "Multi-campus",
-    description: "Joint event with Blockchain UNICAL, BlockchainUNN, and Blockchain Club Unilorin — exploring campus communities' role in Web3 adoption across Nigeria."
+    status: "UPCOMING",
+    category: "CAMPUS · IRL",
+    title: "BitMart Campus Ignite — Web3 Day",
+    hostOrVenue: "LASU Main Campus, Hallowed Chamber",
+    description: "A Web3 Day collab between BitMart and LASU Blockchain Club. Free entry, snacks, USDT prizes, and BitMart merch. First 100 depositors get a free future training voucher.",
+    imageUrl: "/src/assets/images/IMG-20260621-WA0002.jpg"
   },
   {
     id: "EVT-004",
@@ -100,6 +103,11 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "gal-5",
     imageUrl: "https://files.catbox.moe/n5z5fw.jpg",
     caption: "LASU Web3 Community Summit"
+  },
+  {
+    id: "gal-6",
+    imageUrl: "/src/assets/images/IMG-20260621-WA0001.jpg",
+    caption: "Team Building & Networking"
   }
 ];
 
