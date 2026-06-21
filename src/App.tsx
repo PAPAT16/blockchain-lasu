@@ -304,10 +304,9 @@ export default function App() {
         </AnimatePresence>
       </nav>
 
-      <div className="max-w-[1200px] mx-auto px-6">
-        
         {/* 2. HERO - Clean minimalist split perspective layout */}
         <section id="home" className="min-h-0 lg:min-h-[calc(100vh-120px)] flex flex-col justify-center pt-24 pb-12 relative">
+          <div className="max-w-[1200px] mx-auto px-6 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-6 lg:mt-0">
             
             {/* Left Hero Main Block */}
@@ -417,6 +416,7 @@ export default function App() {
               <ExternalLink size={12} className="text-[#AAAAAA]" />
             </a>
           </motion.div>
+          </div>
         </section>
 
         {/* Separator line */}
@@ -453,6 +453,7 @@ export default function App() {
 
         {/* 4. ABOUT SECTION - Bento Grid Layout */}
         <section id="about" className="py-24 space-y-6 scroll-mt-14">
+          <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Top-Left: Who We Are */}
@@ -501,12 +502,14 @@ export default function App() {
             </div>
 
           </div>
+          </div>
         </section>
 
         <hr className="border-[#2A2A2A]" />
 
         {/* 5. EVENTS SECTION - Alternating card highlights with interactive panels */}
         <section id="events" className="py-24 space-y-12 scroll-mt-14">
+          <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -598,9 +601,8 @@ export default function App() {
               );
             })}
           </div>
+          </div>
         </section>
-
-      </div>
 
         <hr className="border-[#2A2A2A]" />
 
@@ -663,12 +665,11 @@ export default function App() {
           </div>
         </section>
 
-      <div className="max-w-[1200px] mx-auto px-6">
-
         <hr className="border-[#2A2A2A]" />
 
         {/* 7. TEAM SECTION - Redesigned Card Layout */}
         <section id="team" className="py-24 space-y-12 scroll-mt-14">
+          <div className="max-w-[1200px] mx-auto px-6">
           <div className="space-y-4">
             <h2 className="text-[44px] font-bold text-white leading-tight max-w-2xl tracking-tight">
               A team who is not afraid to take risks and bet on themselves.
@@ -706,12 +707,14 @@ export default function App() {
               </div>
             ))}
           </div>
+          </div>
         </section>
 
         <hr className="border-[#2A2A2A]" />
 
         {/* 8. PARTNERS SECTION - Muted partner cards & Custom dashed join cards */}
         <section id="partners" className="py-24 space-y-12 scroll-mt-14">
+          <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -783,12 +786,14 @@ export default function App() {
               Partner With Us
             </button>
           </motion.div>
+          </div>
         </section>
 
         <hr className="border-[#2A2A2A]" />
 
         {/* 9. MEMBERSHIP SECTION - Rounded input elements & custom submission workflows */}
         <section id="membership" className="py-24 space-y-12 scroll-mt-14" ref={membershipRef}>
+          <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1028,12 +1033,14 @@ export default function App() {
               </div>
             </motion.div>
           </div>
+          </div>
         </section>
 
         <hr className="border-[#ececee]" />
 
         {/* 10. INVITATION SECTION  */}
         <section id="contact" className="py-24 space-y-12 scroll-mt-14" ref={invitationRef}>
+          <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1183,12 +1190,14 @@ export default function App() {
 
             </div>
           </motion.div>
+          </div>
         </section>
 
         <hr className="border-[#2A2A2A]" />
 
         {/* 11. SOCIALS SECTION & High-contrast Newsletter capturing row */}
         <section className="py-24 space-y-16">
+          <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1277,9 +1286,8 @@ export default function App() {
               )}
             </motion.div>
           </div>
+          </div>
         </section>
-
-      </div>
 
       {/* 12. FOOTER - White background */}
       <footer className="bg-white border-t border-gray-200 pt-16 pb-12">
