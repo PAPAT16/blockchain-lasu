@@ -451,101 +451,55 @@ export default function App() {
 
         <hr className="border-[#2A2A2A]" />
 
-        {/* 4. ABOUT SECTION - Rounded Snow White cards */}
-        <section id="about" className="py-24 space-y-16 scroll-mt-14">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275] }}
-              className="space-y-6"
-            >
-              <h2 className="text-[32px] md:text-[40px] font-bold text-white leading-tight tracking-tight">
-                Who We Are
-              </h2>
-              <p className="text-[16px] text-[#AAAAAA] leading-[1.6] max-w-[640px] font-normal">
+        {/* 4. ABOUT SECTION - Bento Grid Layout */}
+        <section id="about" className="py-24 space-y-6 scroll-mt-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Top-Left: Who We Are */}
+            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md flex flex-col justify-center">
+              <h2 className="text-[32px] font-bold text-white mb-4 tracking-tight">Who We Are</h2>
+              <p className="text-[16px] text-[#AAAAAA] leading-[1.6]">
                 Blockchain Club LASU is one of Nigeria's most active campus blockchain communities — training the next generation of Web3 developers, designers, and founders at Lagos State University, Ojo, Lagos.
               </p>
-              <p className="text-[14px] text-[#888888] leading-relaxed">
-                By bridging technical training with hands-on builders bootcamps, we support students in launching high-impact decentralized utilities, exploring consensus theories, and networking with global industry ecosystem stakeholders.
-              </p>
-            </motion.div>
+            </div>
 
-            {/* Stat row sits directly on canvas for raw typographic emphasis */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.15, ease: [0.175, 0.885, 0.32, 1.275] }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:pl-12"
-            >
-              {STATS.map((st, i) => (
-                <div key={i} className="flex flex-col space-y-1">
-                  <div className="text-[44px] md:text-[56px] font-bold text-white hover:text-[#E8001D] transition-colors leading-none">
-                    {st.value}
+            {/* Top-Right: What We Do */}
+            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md">
+              <h3 className="text-[20px] font-bold text-white mb-6 tracking-tight">Core Tracks</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {WHAT_WE_DO.slice(0, 4).map((item, idx) => (
+                  <div key={idx} className="bg-[#181818] p-4 rounded-2xl border border-[#2A2A2A]">
+                    <div className="text-[#E8001D] mb-2">{item.title[0]}</div>
+                    <h4 className="text-[14px] font-bold text-white">{item.title}</h4>
                   </div>
-                  <div className="text-[13px] font-medium text-[#AAAAAA] tracking-tight">{st.label}</div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom-Left: Stats */}
+            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md flex justify-between items-center">
+              {STATS.map((st, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-[32px] font-bold text-white leading-none">{st.value}</div>
+                  <div className="text-[12px] font-medium text-[#AAAAAA] mt-1">{st.label}</div>
                 </div>
               ))}
-            </motion.div>
-          </div>
-
-          {/* What We Do - Beautiful light Snow grids, rounding 36px */}
-          <div className="space-y-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-left"
-            >
-              <h3 className="text-[18px] font-bold text-white tracking-tight mb-1">Our Core Tracks</h3>
-              <p className="text-[13px] text-[#AAAAAA]">Programs we drive to promote developer proficiency on campus.</p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {WHAT_WE_DO.map((item, idx) => {
-                const getTrackIcon = (iconName: string) => {
-                  switch (iconName) {
-                    case 'Education':
-                      return <GraduationCap className="text-[#E8001D]" size={24} />;
-                    case 'Networking':
-                      return <Handshake className="text-[#E8001D]" size={24} />;
-                    case 'Building':
-                      return <Terminal className="text-[#E8001D]" size={24} />;
-                    case 'Community':
-                      return <Globe className="text-[#E8001D]" size={24} />;
-                    case 'Competitions':
-                      return <Trophy className="text-[#E8001D]" size={24} />;
-                    case 'Advocacy':
-                      return <Megaphone className="text-[#E8001D]" size={24} />;
-                    default:
-                      return <Sparkle className="text-[#E8001D]" size={24} />;
-                  }
-                };
-
-                return (
-                  <motion.div 
-                    key={idx} 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.175, 0.885, 0.32, 1.275] }}
-                    whileHover={{ y: -6, scale: 1.01 }}
-                    className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D]/50 transition-all duration-300 shadow-md hover:shadow-[0_4px_25px_rgba(232,0,29,0.15)] flex flex-col justify-between"
-                  >
-                    <div className="space-y-4">
-                      <div className="p-3 bg-[#E8001D]/10 rounded-2xl w-fit flex items-center justify-center">
-                        {getTrackIcon(item.icon)}
-                      </div>
-                      <h4 className="text-[18px] font-bold text-white tracking-tight">{item.title}</h4>
-                      <p className="text-[13px] text-[#AAAAAA] leading-relaxed">{item.description}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
             </div>
+
+            {/* Bottom-Right: Join/CTA */}
+            <div className="bg-[#E8001D] p-8 rounded-[36px] shadow-lg flex flex-col justify-center items-center text-center">
+              <h3 className="text-[22px] font-bold text-white mb-4">Ready to build?</h3>
+              <p className="text-[14px] text-white/90 mb-6 max-w-[280px]">
+                Join 300+ students actively learning, coding, and deploying decentralized applications.
+              </p>
+              <button 
+                onClick={handleJoinNow}
+                className="bg-white text-[#E8001D] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-all"
+              >
+                Join Now
+              </button>
+            </div>
+
           </div>
         </section>
 
@@ -721,60 +675,43 @@ export default function App() {
 
         <hr className="border-[#2A2A2A]" />
 
-        {/* 7. TEAM SECTION - Extreme rounded cards with DiceBear svg elements */}
+        {/* 7. TEAM SECTION - Redesigned Card Layout */}
         <section id="team" className="py-24 space-y-12 scroll-mt-14">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-3"
-          >
-            <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight">
-              Meet the Team
+          <div className="space-y-4">
+            <h2 className="text-[44px] font-bold text-white leading-tight max-w-2xl tracking-tight">
+              A team who is not afraid to take risks and bet on themselves.
             </h2>
-            <p className="text-[16px] text-[#AAAAAA]">
-              The builders steering the Blockchain LASU movement.
+            <p className="text-[16px] text-[#AAAAAA] max-w-xl">
+              Meet the creators, strategists, and makers who move our mission forward, combining design, code, and vision to achieve remarkable results.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {TEAM_MEMBERS.map((member, idx) => (
-              <motion.div 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TEAM_MEMBERS.map((member) => (
+              <div 
                 key={member.id} 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: idx * 0.05, ease: [0.175, 0.885, 0.32, 1.275] }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                className="bg-[#111111] p-6 rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D] shadow-md flex flex-col items-center text-center space-y-4 hover:shadow-[0_0_20px_rgba(232,0,29,0.2)] transition-all duration-300"
+                className="bg-[#111111] p-4 rounded-[32px] border border-[#2A2A2A] hover:border-[#E8001D] transition-all duration-300 group"
               >
-                {/* Circular Avatar wrapped */}
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-[#181818] border border-[#2A2A2A] flex items-center justify-center">
-                  {/* REPLACE: Swap DiceBear with real photos */}
-                  <img 
+                {/* Image */}
+                <div className="aspect-square rounded-[24px] overflow-hidden mb-6 bg-[#181818]">
+                   <img 
                     src={`https://api.dicebear.com/7.x/personas/svg?seed=${member.seed}`} 
                     alt={member.name} 
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover" 
                   />
                 </div>
 
-                <div className="space-y-1">
-                  <h3 className="text-[15px] font-bold text-white tracking-tight">{member.name}</h3>
-                  <p className="text-[12px] text-[#AAAAAA] font-medium">{member.role}</p>
+                {/* Details */}
+                <div className="px-2">
+                  <h3 className="text-[18px] font-bold text-white">{member.name}</h3>
+                  <p className="text-[14px] text-[#E8001D] font-medium mb-4">{member.role}</p>
+                  <div className="border-t border-[#2A2A2A] pt-4">
+                    <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
+                      Passionate member driving our community forward through dedication, innovation, and leadership within the LASU Blockchain ecosystem.
+                    </p>
+                  </div>
                 </div>
-
-                <a 
-                  href={`https://x.com/${member.xHandle}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-[11px] text-[#AAAAAA] hover:text-[#E8001D] transition-colors inline-block"
-                >
-                  /* REPLACE: real social link */
-                  @{member.xHandle}
-                </a>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
