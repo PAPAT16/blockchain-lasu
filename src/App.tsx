@@ -300,8 +300,8 @@ export default function App() {
       <div className="max-w-[1200px] mx-auto px-6">
         
         {/* 2. HERO - Clean minimalist split perspective layout */}
-        <section id="home" className="min-h-screen flex flex-col justify-center pt-24 pb-16 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-12 lg:mt-0">
+        <section id="home" className="min-h-0 lg:min-h-[calc(100vh-120px)] flex flex-col justify-center pt-24 pb-12 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-6 lg:mt-0">
             
             {/* Left Hero Main Block */}
             <motion.div 
@@ -395,7 +395,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="mt-20 flex items-center justify-between border-t border-[#2A2A2A] pt-6"
+            className="mt-12 lg:mt-14 flex items-center justify-between border-t border-[#2A2A2A] pt-6"
           >
             <span className="font-mono text-[11px] text-[#AAAAAA] tracking-tight">Ojo, Lagos // Nigeria // 6.4674° N, 3.1979° E</span>
             <a 

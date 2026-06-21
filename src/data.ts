@@ -78,33 +78,33 @@ export const EVENTS: ClubEvent[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "gal-1",
-    imageUrl: "https://picsum.photos/600/400?random=11",
-    caption: "Web3 Lagos Conference"
+    imageUrl: "/src/assets/images/lasu_web3bridge_line_1782036827811.jpg",
+    caption: "Web3bridge Lineup"
   },
   {
     id: "gal-2",
-    imageUrl: "https://picsum.photos/600/400?random=12",
-    caption: "Campus Bootcamp"
+    imageUrl: "/src/assets/images/lasu_word_search_contest_1782036842253.jpg",
+    caption: "Interactive Games"
   },
   {
     id: "gal-3",
-    imageUrl: "https://picsum.photos/600/400?random=13",
-    caption: "Inter-University Roundtable"
+    imageUrl: "/src/assets/images/lasu_partner_meetup_1782036856561.jpg",
+    caption: "Global Partner Connect"
   },
   {
     id: "gal-4",
-    imageUrl: "https://picsum.photos/600/400?random=14",
-    caption: "Club Meetup"
+    imageUrl: "/src/assets/images/lasu_solana_builders_1782036872337.jpg",
+    caption: "Solana Campus Builders"
   },
   {
     id: "gal-5",
-    imageUrl: "https://picsum.photos/600/400?random=15",
-    caption: "Merch Drop"
+    imageUrl: "/src/assets/images/lasu_community_gathering_1782036889029.jpg",
+    caption: "Community Builder Summit"
   },
   {
     id: "gal-6",
-    imageUrl: "https://picsum.photos/600/400?random=16",
-    caption: "Workshop Session"
+    imageUrl: "/src/assets/images/lasu_presentation_hall_1782036909062.jpg",
+    caption: "Hackathon Victory"
   }
 ];
 
