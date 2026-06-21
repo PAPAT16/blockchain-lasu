@@ -1277,33 +1277,33 @@ export default function App() {
 
       </div>
 
-      {/* 12. FOOTER - Flat Dark Crimson background */}
-      <footer className="bg-[#0A0A0A] border-t border-[#2A2A2A] pt-16 pb-12">
+      {/* 12. FOOTER - White background */}
+      <footer className="bg-white border-t border-gray-200 pt-16 pb-12">
         <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           
           {/* Column 1: Brand details */}
           <div className="md:col-span-5 space-y-4">
             <button 
               onClick={() => handleScrollTo('home')} 
-              className="flex items-center gap-2 font-[700] text-white hover:text-[#E8001D] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
+              className="flex items-center gap-2 font-[700] text-gray-900 hover:text-[#E8001D] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
             >
               <Link size={18} className="text-[#E8001D] rotate-45" />
               <span>BlockchainLASU</span>
             </button>
-            <p className="text-[13px] text-[#AAAAAA] leading-relaxed max-w-[340px]">
+            <p className="text-[13px] text-gray-500 leading-relaxed max-w-[340px]">
               Educating, training, and connecting LASU students to the future of Web3 and decentralization.
             </p>
           </div>
 
           {/* Column 2: Quick links */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="font-sans text-[11px] text-[#AAAAAA] font-bold tracking-wider uppercase">Quick Links</h4>
+            <h4 className="font-sans text-[11px] text-gray-500 font-bold tracking-wider uppercase">Quick Links</h4>
             <div className="grid grid-cols-2 gap-2">
               {['home', 'about', 'events', 'gallery', 'team', 'partners', 'membership', 'contact'].map((link) => (
                 <button 
                   key={link}
                   onClick={() => handleScrollTo(link)} 
-                  className="text-left text-[13px] text-[#AAAAAA] hover:text-[#E8001D] hover:underline decoration-[#E8001D] hover:font-bold transition-all focus:outline-none capitalize cursor-pointer"
+                  className="text-left text-[13px] text-gray-500 hover:text-[#E8001D] hover:underline decoration-[#E8001D] hover:font-bold transition-all focus:outline-none capitalize cursor-pointer"
                 >
                   {link}
                 </button>
@@ -1313,8 +1313,8 @@ export default function App() {
 
           {/* Column 3: Social list */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="font-sans text-[11px] text-[#AAAAAA] font-bold tracking-wider uppercase">Social Channels</h4>
-            <div className="flex flex-col gap-2 text-[13px] text-[#AAAAAA]">
+            <h4 className="font-sans text-[11px] text-gray-500 font-bold tracking-wider uppercase">Social Channels</h4>
+            <div className="flex flex-col gap-2 text-[13px] text-gray-500">
               <a href="https://x.com/BlockchainLASU" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">Twitter/X</a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">Instagram</a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">LinkedIn</a>
@@ -1326,8 +1326,8 @@ export default function App() {
         </div>
 
         {/* Bottom bar */}
-        <div className="max-w-[1200px] mx-auto px-6 pt-8 border-t border-[#2A2A2A]">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#AAAAAA]">
+        <div className="max-w-[1200px] mx-auto px-6 pt-8 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-gray-500">
             <span>© 2025 Blockchain Club, Lagos State University. All rights reserved.</span>
             <span>Built by the LASU Blockchain Community</span>
           </div>
