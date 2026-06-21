@@ -1,0 +1,6 @@
+{
+  "name": "LASU Blockchain Club",
+  "description": "The official web platform of Lagos State University's student-led blockchain organization. Educating, training, and connecting members to careers in Blockchain and Web3.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
