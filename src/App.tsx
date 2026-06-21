@@ -467,17 +467,17 @@ export default function App() {
             <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md">
               <h3 className="text-[20px] font-bold text-white mb-6 tracking-tight">Core Tracks</h3>
               <div className="grid grid-cols-2 gap-4">
-                {WHAT_WE_DO.slice(0, 4).map((item, idx) => (
+                {WHAT_WE_DO.map((item, idx) => (
                   <div key={idx} className="bg-[#181818] p-4 rounded-2xl border border-[#2A2A2A]">
-                    <div className="text-[#E8001D] mb-2">{item.title[0]}</div>
                     <h4 className="text-[14px] font-bold text-white">{item.title}</h4>
+                    <p className="text-[12px] text-[#AAAAAA] mt-1 line-clamp-2">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Bottom-Left: Stats */}
-            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md flex justify-between items-center">
+            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md flex justify-around items-center">
               {STATS.map((st, i) => (
                 <div key={i} className="text-center">
                   <div className="text-[32px] font-bold text-white leading-none">{st.value}</div>
@@ -487,14 +487,14 @@ export default function App() {
             </div>
 
             {/* Bottom-Right: Join/CTA */}
-            <div className="bg-[#E8001D] p-8 rounded-[36px] shadow-lg flex flex-col justify-center items-center text-center">
+            <div className="bg-gradient-to-br from-[#E8001D] to-[#9B0011] p-8 rounded-[36px] shadow-lg flex flex-col justify-center items-center text-center">
               <h3 className="text-[22px] font-bold text-white mb-4">Ready to build?</h3>
               <p className="text-[14px] text-white/90 mb-6 max-w-[280px]">
                 Join 300+ students actively learning, coding, and deploying decentralized applications.
               </p>
               <button 
                 onClick={handleJoinNow}
-                className="bg-white text-[#E8001D] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-all"
+                className="bg-white text-[#E8001D] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-all shadow-md"
               >
                 Join Now
               </button>
