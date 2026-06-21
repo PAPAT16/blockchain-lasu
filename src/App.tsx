@@ -151,6 +151,15 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
+  // Close mobile menu on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (mobileMenuOpen) setMobileMenuOpen(false);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [mobileMenuOpen]);
+
   // Smooth scroll handler
   const handleScrollTo = (id: string) => {
     setMobileMenuOpen(false);
@@ -305,16 +314,16 @@ export default function App() {
       </nav>
 
         {/* 2. HERO - Clean minimalist split perspective layout */}
-        <section id="home" className="min-h-0 lg:min-h-[calc(100vh-120px)] flex flex-col justify-center pt-24 pb-12 relative">
+        <section id="home" className="min-h-0 lg:min-h-[calc(100vh-120px)] flex flex-col justify-center pt-16 pb-8 lg:pb-12 relative">
           <div className="max-w-[1200px] mx-auto px-6 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-6 lg:mt-0">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mt-4 lg:mt-0">
+
             {/* Left Hero Main Block */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.275] }}
-              className="lg:col-span-7 space-y-8"
+              className="lg:col-span-7 space-y-6 lg:space-y-8"
             >
               {/* Announcement Strip */}
               <motion.div 
@@ -330,7 +339,7 @@ export default function App() {
               </motion.div>
 
               <h1 
-                className="text-[44px] md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.08] tracking-tight font-sans"
+                className="text-[26px] sm:text-[36px] md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.08] tracking-tight font-sans"
               >
                 The Future of <span className="text-[#E8001D] font-bold drop-shadow-[0_0_12px_rgba(232,0,29,0.4)]">Web3</span> Starts at LASU
               </h1>
@@ -364,7 +373,7 @@ export default function App() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.175, 0.885, 0.32, 1.275] }}
-              className="lg:col-span-5 bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D]/45 shadow-[0_0_20px_rgba(232,0,29,0.1)] transition-all duration-350 space-y-6"
+              className="lg:col-span-5 bg-[#111111] p-6 sm:p-8 rounded-[24px] sm:rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D]/45 shadow-[0_0_20px_rgba(232,0,29,0.1)] transition-all duration-350 space-y-6"
             >
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-1.5 bg-[#E8001D]/20 text-[#FF3344] border border-[#E8001D]/30 text-[10px] font-bold px-2.5 py-1.5 rounded-full uppercase">
@@ -402,7 +411,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="mt-12 lg:mt-14 flex items-center justify-between border-t border-[#2A2A2A] pt-6"
+            className="mt-12 lg:mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-[#2A2A2A] pt-6 gap-3"
           >
             <span className="font-mono text-[11px] text-[#AAAAAA] tracking-tight">Ojo, Lagos // Nigeria // 6.4674° N, 3.1979° E</span>
             <a 
@@ -451,22 +460,22 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 4. ABOUT SECTION - Bento Grid Layout */}
-        <section id="about" className="py-24 space-y-6 scroll-mt-14">
+        <section id="about" className="py-10 md:py-24 space-y-6 scroll-mt-14">
           <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Top-Left: Who We Are */}
-            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md flex flex-col justify-center">
-              <h2 className="text-[32px] font-bold text-white mb-4 tracking-tight">Who We Are</h2>
-              <p className="text-[16px] text-[#AAAAAA] leading-[1.6]">
+            <div className="bg-[#111111] p-6 md:p-8 rounded-[24px] md:rounded-[36px] border border-[#2A2A2A] shadow-md flex flex-col justify-center">
+              <h2 className="text-[22px] md:text-[32px] font-bold text-white mb-4 tracking-tight">Who We Are</h2>
+              <p className="text-[14px] md:text-[16px] text-[#AAAAAA] leading-[1.6]">
                 Blockchain Club LASU is one of Nigeria's most active campus blockchain communities — training the next generation of Web3 developers, designers, and founders at Lagos State University, Ojo, Lagos.
               </p>
             </div>
 
             {/* Top-Right: What We Do */}
-            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md">
-              <h3 className="text-[20px] font-bold text-white mb-6 tracking-tight">Core Tracks</h3>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="bg-[#111111] p-6 md:p-8 rounded-[24px] md:rounded-[36px] border border-[#2A2A2A] shadow-md">
+              <h3 className="text-[18px] sm:text-[20px] font-bold text-white mb-6 tracking-tight">Core Tracks</h3>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {WHAT_WE_DO.map((item, idx) => (
                   <div key={idx} className="bg-[#181818] p-4 rounded-2xl border border-[#2A2A2A]">
                     <h4 className="text-[14px] font-bold text-white">{item.title}</h4>
@@ -477,17 +486,17 @@ export default function App() {
             </div>
 
             {/* Bottom-Left: Stats */}
-            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-md flex justify-around items-center">
+            <div className="bg-[#111111] p-6 md:p-8 rounded-[24px] md:rounded-[36px] border border-[#2A2A2A] shadow-md flex justify-around items-center">
               {STATS.map((st, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-[32px] font-bold text-white leading-none">{st.value}</div>
-                  <div className="text-[12px] font-medium text-[#AAAAAA] mt-1">{st.label}</div>
+                  <div className="text-[24px] sm:text-[32px] font-bold text-white leading-none">{st.value}</div>
+                  <div className="text-[11px] sm:text-[12px] font-medium text-[#AAAAAA] mt-1">{st.label}</div>
                 </div>
               ))}
             </div>
 
             {/* Bottom-Right: Join/CTA */}
-            <div className="bg-gradient-to-br from-[#E8001D] to-[#9B0011] p-8 rounded-[36px] shadow-lg flex flex-col justify-center items-center text-center">
+            <div className="bg-gradient-to-br from-[#E8001D] to-[#9B0011] p-6 md:p-8 rounded-[24px] md:rounded-[36px] shadow-lg flex flex-col justify-center items-center text-center">
               <h3 className="text-[22px] font-bold text-white mb-4">Ready to build?</h3>
               <p className="text-[14px] text-white/90 mb-6 max-w-[280px]">
                 Join 300+ students actively learning, coding, and deploying decentralized applications.
@@ -507,7 +516,7 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 5. EVENTS SECTION - Alternating card highlights with interactive panels */}
-        <section id="events" className="py-24 space-y-12 scroll-mt-14">
+        <section id="events" className="py-10 md:py-24 space-y-8 md:space-y-12 scroll-mt-14">
           <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -517,7 +526,7 @@ export default function App() {
             className="flex flex-col md:flex-row md:items-end justify-between gap-4"
           >
             <div className="space-y-3">
-              <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight">
+              <h2 className="text-[24px] md:text-[40px] font-bold text-white tracking-tight">
                 Events & Programs
               </h2>
               <p className="text-[16px] text-[#AAAAAA] max-w-[560px]">
@@ -545,7 +554,7 @@ export default function App() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.175, 0.885, 0.32, 1.275] }}
                   whileHover={{ y: -6, scale: 1.01 }}
-                  className={`rounded-[36px] flex flex-col relative shadow-md transition-all duration-300 overflow-hidden ${
+                  className={`rounded-[24px] md:rounded-[36px] flex flex-col relative shadow-md transition-all duration-300 overflow-hidden ${
                     isOrchidFeatured 
                       ? 'bg-gradient-to-tr from-[#9B0011] to-[#E8001D] text-white border border-[#E8001D]/40 shadow-[0_0_30px_rgba(232,0,29,0.25)] hover:shadow-[0_0_40px_rgba(232,0,29,0.45)]' 
                       : 'bg-[#111111] border border-[#2A2A2A] hover:border-[#E8001D]/50 text-white hover:shadow-[0_0_20px_rgba(232,0,29,0.1)]'
@@ -560,7 +569,7 @@ export default function App() {
                       />
                     </div>
                   )}
-                  <div className="p-8 space-y-6 flex flex-col flex-1">
+                  <div className="p-6 md:p-8 space-y-6 flex flex-col flex-1">
                     {/* Badge Row */}
                     <div className="flex items-center justify-between">
                       <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full ${
@@ -579,7 +588,7 @@ export default function App() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-[22px] font-bold tracking-tight text-white">{evt.title}</h3>
+                      <h3 className="text-[17px] md:text-[22px] font-bold tracking-tight text-white">{evt.title}</h3>
                       <div className="flex items-center gap-2 font-mono text-[12px] opacity-90 text-[#AAAAAA]">
                         <MapPin size={13} className="opacity-75" />
                         <span>{evt.hostOrVenue}</span>
@@ -614,17 +623,17 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 6. GALLERY - White background section (full-width) */}
-        <section id="gallery" className="py-24 space-y-12 scroll-mt-14 bg-white">
+        <section id="gallery" className="py-10 md:py-24 space-y-8 md:space-y-12 scroll-mt-14 bg-white">
           <div className="space-y-3 max-w-[1200px] mx-auto px-6">
-            <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight fade-up-element opacity-0 translate-y-8">
+            <h2 className="text-[24px] md:text-[40px] font-bold text-gray-900 tracking-tight fade-up-element opacity-0 translate-y-8">
               Our Moments
             </h2>
-            <p className="text-[16px] text-gray-500 fade-up-element opacity-0 translate-y-8">
+            <p className="text-[14px] md:text-[16px] text-gray-500 fade-up-element opacity-0 translate-y-8">
               Real events. Real people. Real impact.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-[1200px] mx-auto px-6">
             {GALLERY_ITEMS.map((item, idx) => (
               <a 
                 href={item.imageUrl}
@@ -664,10 +673,10 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 7. TEAM SECTION - Redesigned Card Layout */}
-        <section id="team" className="py-24 space-y-12 scroll-mt-14">
+        <section id="team" className="py-10 md:py-24 space-y-8 md:space-y-12 scroll-mt-14">
           <div className="max-w-[1200px] mx-auto px-6">
           <div className="space-y-4 fade-up-element opacity-0 translate-y-8">
-            <h2 className="text-[44px] font-bold text-white leading-tight max-w-2xl tracking-tight">
+            <h2 className="text-[24px] md:text-[44px] font-bold text-white leading-tight max-w-2xl tracking-tight">
               A team who is not afraid to take risks and bet on themselves.
             </h2>
             <p className="text-[16px] text-[#AAAAAA] max-w-xl">
@@ -679,11 +688,11 @@ export default function App() {
             {TEAM_MEMBERS.map((member, idx) => (
               <div 
                 key={member.id} 
-                className="bg-[#111111] p-4 rounded-[32px] border border-[#2A2A2A] hover:border-[#E8001D] transition-all duration-300 group fade-up-element opacity-0 translate-y-8"
+                className="bg-[#111111] p-3 md:p-4 rounded-[20px] md:rounded-[32px] border border-[#2A2A2A] hover:border-[#E8001D] transition-all duration-300 group fade-up-element opacity-0 translate-y-8"
                 style={{ transitionDelay: `${idx * 0.08}s` }}
               >
                 {/* Image */}
-                <div className="aspect-square rounded-[24px] overflow-hidden mb-6 bg-[#181818]">
+                <div className="aspect-square rounded-[16px] md:rounded-[24px] overflow-hidden mb-3 md:mb-6 bg-[#181818]">
                    <img 
                     src={`https://api.dicebear.com/7.x/personas/svg?seed=${member.seed}`} 
                     alt={member.name} 
@@ -692,11 +701,11 @@ export default function App() {
                 </div>
 
                 {/* Details */}
-                <div className="px-2">
-                  <h3 className="text-[18px] font-bold text-white">{member.name}</h3>
-                  <p className="text-[14px] text-[#E8001D] font-medium mb-4">{member.role}</p>
-                  <div className="border-t border-[#2A2A2A] pt-4">
-                    <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
+                <div className="px-1 md:px-2">
+                  <h3 className="text-[15px] md:text-[18px] font-bold text-white">{member.name}</h3>
+                  <p className="text-[12px] md:text-[14px] text-[#E8001D] font-medium mb-2 md:mb-4">{member.role}</p>
+                  <div className="border-t border-[#2A2A2A] pt-2 md:pt-4">
+                    <p className="text-[12px] md:text-[13px] text-[#AAAAAA] leading-relaxed">
                       Passionate member driving our community forward through dedication, innovation, and leadership within the LASU Blockchain ecosystem.
                     </p>
                   </div>
@@ -710,7 +719,7 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 8. PARTNERS SECTION - Muted partner cards & Custom dashed join cards */}
-        <section id="partners" className="py-24 space-y-12 scroll-mt-14">
+        <section id="partners" className="py-10 md:py-24 space-y-8 md:space-y-12 scroll-mt-14">
           <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -719,10 +728,10 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="space-y-3"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight">
+            <h2 className="text-[24px] md:text-[40px] font-bold text-white tracking-tight">
               Partners & Collaborators
             </h2>
-            <p className="text-[16px] text-[#AAAAAA]">
+            <p className="text-[14px] md:text-[16px] text-[#AAAAAA]">
               Web3 organizations we've built with across Nigeria and beyond.
             </p>
           </motion.div>
@@ -789,7 +798,7 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 9. MEMBERSHIP SECTION - Rounded input elements & custom submission workflows */}
-        <section id="membership" className="py-24 space-y-12 scroll-mt-14" ref={membershipRef}>
+        <section id="membership" className="py-10 md:py-24 space-y-8 md:space-y-12 scroll-mt-14" ref={membershipRef}>
           <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -798,10 +807,10 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="space-y-3"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight">
+            <h2 className="text-[24px] md:text-[40px] font-bold text-white tracking-tight">
               Join the Movement
             </h2>
-            <p className="text-[16px] text-[#AAAAAA]">
+            <p className="text-[14px] md:text-[16px] text-[#AAAAAA]">
               Become part of Nigeria's most active campus Web3 community.
             </p>
           </motion.div>
@@ -855,7 +864,7 @@ export default function App() {
               transition={{ duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275] }}
               className="lg:col-span-7"
             >
-              <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+              <div className="bg-[#111111] p-6 md:p-8 rounded-[24px] md:rounded-[36px] border border-[#2A2A2A] shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                 
                 {joinSuccess ? (
                   /* Form execution receipt view */
@@ -1036,7 +1045,7 @@ export default function App() {
         <hr className="border-[#ececee]" />
 
         {/* 10. INVITATION SECTION  */}
-        <section id="contact" className="py-24 space-y-12 scroll-mt-14" ref={invitationRef}>
+        <section id="contact" className="py-10 md:py-24 space-y-8 md:space-y-12 scroll-mt-14" ref={invitationRef}>
           <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -1045,7 +1054,7 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="text-center space-y-3 max-w-[640px] mx-auto"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight">
+            <h2 className="text-[24px] md:text-[40px] font-bold text-white tracking-tight">
               Invite Us to Your Event
             </h2>
             <p className="text-[16px] text-[#AAAAAA] leading-relaxed">
@@ -1060,7 +1069,7 @@ export default function App() {
             transition={{ duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275] }}
             className="max-w-[560px] mx-auto"
           >
-            <div className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] shadow-lg">
+            <div className="bg-[#111111] p-6 md:p-8 rounded-[24px] md:rounded-[36px] border border-[#2A2A2A] shadow-lg">
               
               {inviteSuccess ? (
                 /* Invitation Received view */
@@ -1193,7 +1202,7 @@ export default function App() {
         <hr className="border-[#2A2A2A]" />
 
         {/* 11. SOCIALS SECTION & High-contrast Newsletter capturing row */}
-        <section className="py-24 space-y-16">
+        <section className="py-10 md:py-24 space-y-10 md:space-y-16">
           <div className="max-w-[1200px] mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -1202,10 +1211,10 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="space-y-3"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight">
+            <h2 className="text-[24px] md:text-[40px] font-bold text-white tracking-tight">
               Stay in the Loop
             </h2>
-            <p className="text-[16px] text-[#AAAAAA]">
+            <p className="text-[14px] md:text-[16px] text-[#AAAAAA]">
               Never miss an event, workshop, or recruitment opportunity.
             </p>
           </motion.div>
@@ -1231,10 +1240,10 @@ export default function App() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
                   whileHover={{ y: -4, scale: 1.02 }}
-                  className="bg-[#111111] rounded-[28px] p-4 border border-[#2A2A2A] shadow-md hover:border-[#E8001D] hover:shadow-[0_0_15px_rgba(232,0,29,0.15)] transition-all text-center flex flex-col justify-center items-center h-24"
+                  className="bg-[#111111] rounded-[20px] md:rounded-[28px] p-3 md:p-4 border border-[#2A2A2A] shadow-md hover:border-[#E8001D] hover:shadow-[0_0_15px_rgba(232,0,29,0.15)] transition-all text-center flex flex-col justify-center items-center h-20 md:h-24"
                 >
-                  <span className="text-[14px] font-bold text-white">{soc.label}</span>
-                  <span className="text-[10px] text-[#AAAAAA] font-mono mt-1">/* REPLACE: social */</span>
+                  <span className="text-[12px] md:text-[14px] font-bold text-white">{soc.label}</span>
+                  <span className="text-[9px] md:text-[10px] text-[#AAAAAA] font-mono mt-1">/* REPLACE: social */</span>
                 </motion.a>
               ))}
             </div>
@@ -1245,15 +1254,15 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275] }}
-              className="lg:col-span-6 bg-[#111111] border border-[#2A2A2A] text-white p-8 md:p-10 rounded-[36px] shadow-lg flex flex-col justify-between"
+              className="lg:col-span-6 bg-[#111111] border border-[#2A2A2A] text-white p-6 md:p-10 rounded-[24px] md:rounded-[36px] shadow-lg flex flex-col justify-between"
             >
               <div className="space-y-3 mb-6">
                 <span className="inline-flex items-center gap-1.5 bg-[#222222] text-white text-[10px] font-bold px-2.5 py-1.5 rounded-full uppercase">
                   <Mail size={12} className="text-[#E8001D]" />
                   <span>Club Newsletter</span>
                 </span>
-                <h3 className="text-[20px] font-bold text-white">Consensus Bulletin</h3>
-                <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
+                <h3 className="text-[18px] md:text-[20px] font-bold text-white">Consensus Bulletin</h3>
+                <p className="text-[12px] md:text-[13px] text-[#AAAAAA] leading-relaxed">
                   Get occasional development recaps, Solidity tips, and job openings sent directly to your inbox.
                 </p>
               </div>
@@ -1287,8 +1296,8 @@ export default function App() {
         </section>
 
       {/* 12. FOOTER - White background */}
-      <footer className="bg-white border-t border-gray-200 pt-16 pb-12">
-        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+      <footer className="bg-white border-t border-gray-200 pt-10 md:pt-16 pb-8 md:pb-12">
+        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-8 md:mb-12">
           
           {/* Column 1: Brand details */}
           <div className="md:col-span-5 space-y-4 fade-up-element opacity-0 translate-y-8">
