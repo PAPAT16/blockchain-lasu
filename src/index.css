@@ -1,76 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Berkeley Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Awesomic Design System Tokens */
-  --color-obsidian: #09090b;
-  --color-ink: #18181b;
-  --color-graphite: #3f3f46;
-  --color-slate: #52525b;
-  --color-steel: #71717a;
-  --color-ash: #a1a1aa;
-  --color-pebble: #d4d4d8;
-  --color-fog: #ececee;
-  --color-mist: #f4f4f5;
-  --color-snow: #ffffff;
-  --color-ember: #ff5a00;
-  --color-orchid-flash: #fe45e2;
+  /* Dark Crimson System Tokens */
+  --color-bg-pure: #0A0A0A;
+  --color-surface-card: #111111;
+  --color-accent-red: #E8001D;
+  --color-accent-rose: #FF3344;
+  --color-border-dark: #2A2A2A;
+  --color-text-muted: #AAAAAA;
+  --color-text-primary: #FFFFFF;
 
-  /* Aliasing system tokens to functional colors */
-  --color-canvas: #f4f4f5;       /* Mist */
-  --color-nav: rgba(255, 255, 255, 0.85); /* Frost snow */
-  --color-card: #ffffff;        /* Snow */
-  --color-input: #ffffff;       /* Snow */
-  --color-border-sm: #ececee;   /* Fog */
-  --color-border-md: #d4d4d8;   /* Pebble */
-  --color-muted: #a1a1aa;       /* Ash */
-  --color-secondary: #71717a;   /* Steel */
-  --color-tertiary: #3f3f46;    /* Graphite */
-  --color-primary: #09090b;     /* Obsidian */
+  /* Aliasing system tokens to functional colors for smooth reuse */
+  --color-canvas: #0A0A0A;
+  --color-nav: rgba(10, 10, 10, 0.85);
+  --color-card: #111111;
+  --color-input: #151515;
+  --color-border-sm: #2A2A2A;
+  --color-border-md: #E8001D;
+  --color-muted: #AAAAAA;
+  --color-secondary: #AAAAAA;
+  --color-tertiary: #CCCCCC;
+  --color-primary: #FFFFFF;
 
-  /* Shadows */
-  --shadow-subtle: rgba(255, 255, 255, 0.5) 0px 0.5px 0px 0px inset, rgba(117, 123, 133, 0.4) 0px 9px 14px -5px inset, rgb(44, 46, 52) 0px 0px 0px 1.5px, rgba(0, 0, 0, 0.14) 0px 4px 6px 0px;
-  --shadow-subtle-2: rgb(228, 228, 231) 0px 1px 0px 0px inset;
-  --shadow-md: rgba(0, 0, 0, 0.04) 0px 4px 12px 0px;
+  /* Shadows & Neon Glows */
+  --shadow-sm: rgba(0, 0, 0, 0.4) 0px 2px 4px 0px;
+  --shadow-md: rgba(0, 0, 0, 0.2) 0px 0px 12px 0px inset;
+  --shadow-glow: 0 0 20px rgba(232, 0, 29, 0.45);
+  --shadow-subtle: rgb(35, 37, 42) 0px 0px 0px 1px inset;
+  --shadow-subtle-2: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+  --shadow-subtle-3: rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px;
+  --shadow-xl: rgba(8, 9, 10, 0.6) 0px 4px 32px 0px;
+  --shadow-subtle-4: rgba(0, 0, 0, 0.1) 0px 0px 0px 2px;
+  --shadow-subtle-5: rgba(0, 0, 0, 0.33) 0px 0px 0px 1px;
+  --shadow-subtle-6: rgba(255, 255, 255, 0.03) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 4px 0px;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: var(--color-canvas);
-    color: var(--color-primary);
+    background-color: #0A0A0A;
+    color: #FFFFFF;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
+    background-color: #0A0A0A;
+    color: #FFFFFF;
   }
 }
 
-/* Custom scrollbar to match the high-density light theme */
+/* Custom scrollbar to match the high-contrast dark theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f4f4f5;
+  background: #0A0A0A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ececee;
+  background: #2A2A2A;
   border-radius: 9999px;
-  border: 2px solid #f4f4f5;
+  border: 2px solid #0A0A0A;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4d4d8;
+  background: #E8001D;
 }
 
 /* Continuously looping scrolling bands */
@@ -88,3 +90,25 @@
 .animate-ticker:hover {
   animation-play-state: paused;
 }
+
+/* Red neon hover underline animation class */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #E8001D;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
