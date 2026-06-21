@@ -28,7 +28,14 @@ import {
   Linkedin,
   MessageCircle,
   ChevronRight,
-  Sparkle
+  Sparkle,
+  GraduationCap,
+  Handshake,
+  Terminal,
+  Trophy,
+  Megaphone,
+  Link,
+  Camera
 } from 'lucide-react';
 import { STATS, WHAT_WE_DO, EVENTS, GALLERY_ITEMS, TEAM_MEMBERS, PARTNER_LOGOS, DETAILED_PARTNERS } from './data.ts';
 import { JoinFormInput, InviteFormInput } from './types.ts';
@@ -218,7 +225,7 @@ export default function App() {
             className="flex items-center gap-2 font-[700] text-white hover:text-[#E8001D] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
             aria-label="BlockchainLASU Home"
           >
-            <span className="text-[#E8001D] text-[18px]">⛓</span>
+            <Link size={18} className="text-[#E8001D] rotate-45" />
             <span>BlockchainLASU</span>
           </button>
 
@@ -361,8 +368,9 @@ export default function App() {
               className="lg:col-span-5 bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D]/45 shadow-[0_0_20px_rgba(232,0,29,0.1)] transition-all duration-350 space-y-6"
             >
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-1.5 bg-[#E8001D]/20 text-[#FF3344] border border-[#E8001D]/30 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">
-                  ⚡ Membership Intake Open
+                <div className="inline-flex items-center gap-1.5 bg-[#E8001D]/20 text-[#FF3344] border border-[#E8001D]/30 text-[10px] font-bold px-2.5 py-1.5 rounded-full uppercase">
+                  <Activity size={12} className="text-[#FF3344] animate-pulse" />
+                  <span>Membership Intake Open</span>
                 </div>
                 <h3 className="text-[20px] font-bold text-white">Apply to the cohort</h3>
                 <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
@@ -497,23 +505,46 @@ export default function App() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {WHAT_WE_DO.map((item, idx) => (
-                <motion.div 
-                  key={idx} 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.175, 0.885, 0.32, 1.275] }}
-                  whileHover={{ y: -6, scale: 1.01 }}
-                  className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D]/50 transition-all duration-300 shadow-md hover:shadow-[0_4px_25px_rgba(232,0,29,0.15)] flex flex-col justify-between"
-                >
-                  <div className="space-y-4">
-                    <span className="text-3xl select-none" role="img" aria-label={item.title}>{item.icon}</span>
-                    <h4 className="text-[18px] font-bold text-white tracking-tight">{item.title}</h4>
-                    <p className="text-[13px] text-[#AAAAAA] leading-relaxed">{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {WHAT_WE_DO.map((item, idx) => {
+                const getTrackIcon = (iconName: string) => {
+                  switch (iconName) {
+                    case 'Education':
+                      return <GraduationCap className="text-[#E8001D]" size={24} />;
+                    case 'Networking':
+                      return <Handshake className="text-[#E8001D]" size={24} />;
+                    case 'Building':
+                      return <Terminal className="text-[#E8001D]" size={24} />;
+                    case 'Community':
+                      return <Globe className="text-[#E8001D]" size={24} />;
+                    case 'Competitions':
+                      return <Trophy className="text-[#E8001D]" size={24} />;
+                    case 'Advocacy':
+                      return <Megaphone className="text-[#E8001D]" size={24} />;
+                    default:
+                      return <Sparkle className="text-[#E8001D]" size={24} />;
+                  }
+                };
+
+                return (
+                  <motion.div 
+                    key={idx} 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.175, 0.885, 0.32, 1.275] }}
+                    whileHover={{ y: -6, scale: 1.01 }}
+                    className="bg-[#111111] p-8 rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D]/50 transition-all duration-300 shadow-md hover:shadow-[0_4px_25px_rgba(232,0,29,0.15)] flex flex-col justify-between"
+                  >
+                    <div className="space-y-4">
+                      <div className="p-3 bg-[#E8001D]/10 rounded-2xl w-fit flex items-center justify-center">
+                        {getTrackIcon(item.icon)}
+                      </div>
+                      <h4 className="text-[18px] font-bold text-white tracking-tight">{item.title}</h4>
+                      <p className="text-[13px] text-[#AAAAAA] leading-relaxed">{item.description}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -655,11 +686,11 @@ export default function App() {
                     src={item.imageUrl} 
                     alt={item.caption} 
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale opacity-90 brightness-[0.8] hover:grayscale-0 hover:opacity-100 hover:brightness-100 hover:scale-[1.02] transition-all duration-300" 
+                    className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-300" 
                   />
                   {/* Overlay camera prompt */}
-                  <div className="absolute top-3 right-3 bg-[#0A0A0A]/90 backdrop-blur-md p-2 rounded-lg border border-[#2A2A2A] shadow-sm">
-                    <span role="img" aria-label="Camera Icon" className="text-xs select-none text-white">📸</span>
+                  <div className="absolute top-3 right-3 bg-[#0A0A0A]/90 backdrop-blur-md p-2 rounded-lg border border-[#2A2A2A] shadow-sm flex items-center justify-center">
+                    <Camera size={14} className="text-[#E8001D]" />
                   </div>
                 </div>
 
@@ -669,7 +700,7 @@ export default function App() {
                     {item.caption}
                   </span>
                   <span className="text-[#AAAAAA] text-xs font-mono">
-                    [{index + 1}/6]
+                    [{index + 1}/{GALLERY_ITEMS.length}]
                   </span>
                 </div>
               </motion.a>
@@ -899,7 +930,10 @@ export default function App() {
                   /* Form execution receipt view */
                   <div className="border-l-[4px] border-[#E8001D] pl-6 py-2 space-y-6">
                     <div className="space-y-2">
-                      <h3 className="text-[22px] font-bold text-white">🎉 Application Received!</h3>
+                      <h3 className="text-[22px] font-bold text-white flex items-center gap-2">
+                        <Sparkles size={22} className="text-[#E8001D] animate-pulse" />
+                        <span>Application Received!</span>
+                      </h3>
                       <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
                         Thank you for applying to join the LASU Blockchain Club, <span className="text-white font-semibold">{joinData.fullName}</span>. We've logged your application details securely:
                       </p>
@@ -1098,7 +1132,10 @@ export default function App() {
               {inviteSuccess ? (
                 /* Invitation Received view */
                 <div className="border-l-[4px] border-[#E8001D] pl-6 py-2 space-y-4">
-                  <h3 className="text-[18px] font-bold text-white">✅ Invitation received.</h3>
+                  <h3 className="text-[18px] font-bold text-white flex items-center gap-2">
+                    <Check className="text-[#E8001D]" size={18} />
+                    <span>Invitation received.</span>
+                  </h3>
                   <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
                     We've received your coordination request for the event <span className="text-white font-semibold">"{inviteData.eventName}"</span>.
                   </p>
@@ -1276,8 +1313,9 @@ export default function App() {
               className="lg:col-span-6 bg-[#111111] border border-[#2A2A2A] text-white p-8 md:p-10 rounded-[36px] shadow-lg flex flex-col justify-between"
             >
               <div className="space-y-3 mb-6">
-                <span className="inline-flex items-center gap-1.5 bg-[#222222] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">
-                  📰 Club Newsletter
+                <span className="inline-flex items-center gap-1.5 bg-[#222222] text-white text-[10px] font-bold px-2.5 py-1.5 rounded-full uppercase">
+                  <Mail size={12} className="text-[#E8001D]" />
+                  <span>Club Newsletter</span>
                 </span>
                 <h3 className="text-[20px] font-bold text-white">Consensus Bulletin</h3>
                 <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
@@ -1286,8 +1324,9 @@ export default function App() {
               </div>
 
               {newsletterSubmitted ? (
-                <div className="bg-[#2A2A2A] p-4 rounded-[14px] border border-[#3A3A3A] text-[13px] text-[#E8001D] font-medium">
-                  🎉 Swell! Thank you for subscribing. Check your mail soon!
+                <div className="bg-[#2A2A2A] p-4 rounded-[14px] border border-[#3A3A3A] text-[13px] text-[#E8001D] font-medium flex items-center gap-2">
+                  <Sparkle size={14} className="text-[#E8001D] animate-pulse" />
+                  <span>Swell! Thank you for subscribing. Check your mail soon!</span>
                 </div>
               ) : (
                 <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -1323,7 +1362,7 @@ export default function App() {
               onClick={() => handleScrollTo('home')} 
               className="flex items-center gap-2 font-[700] text-white hover:text-[#E8001D] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
             >
-              <span className="text-[#E8001D] text-xl">⛓</span>
+              <Link size={18} className="text-[#E8001D] rotate-45" />
               <span>BlockchainLASU</span>
             </button>
             <p className="text-[13px] text-[#AAAAAA] leading-relaxed max-w-[340px]">

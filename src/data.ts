@@ -8,32 +8,32 @@ export const STATS = [
 
 export const WHAT_WE_DO = [
   {
-    icon: "🎓",
+    icon: "Education",
     title: "Education & Training",
     description: "Workshops, bootcamps, and hands-on blockchain learning programs designed for all skill levels."
   },
   {
-    icon: "🤝",
+    icon: "Networking",
     title: "Networking",
     description: "Connect and collaborate with leading Web3 builders, innovators, and clubs across Nigeria and Africa."
   },
   {
-    icon: "🛠",
+    icon: "Building",
     title: "Building",
     description: "Developing tangible, decentralized blockchain products and solutions targeting local African developmental problems."
   },
   {
-    icon: "🌍",
+    icon: "Community",
     title: "Community",
     description: "An active, growing tribe of Web3-curious minds, researchers, and tech enthusiasts on Lagos State University campus."
   },
   {
-    icon: "🏆",
+    icon: "Competitions",
     title: "Competitions",
     description: "Participate in local and international hackathons, pitch contests, chain challenges, and win bounties."
   },
   {
-    icon: "📣",
+    icon: "Advocacy",
     title: "Advocacy",
     description: "Driving massive blockchain awareness and sound regulatory/principles adoption among Nigerian university students."
   }
@@ -78,33 +78,28 @@ export const EVENTS: ClubEvent[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "gal-1",
-    imageUrl: "/src/assets/images/lasu_web3bridge_line_1782036827811.jpg",
-    caption: "Web3bridge Lineup"
+    imageUrl: "https://files.catbox.moe/9dal6y.jpg",
+    caption: "Web3bridge On-campus Lineup"
   },
   {
     id: "gal-2",
-    imageUrl: "/src/assets/images/lasu_word_search_contest_1782036842253.jpg",
-    caption: "Interactive Games"
+    imageUrl: "https://files.catbox.moe/7fsibv.jpg",
+    caption: "Interactive Word Search Challenge"
   },
   {
     id: "gal-3",
-    imageUrl: "/src/assets/images/lasu_partner_meetup_1782036856561.jpg",
-    caption: "Global Partner Connect"
+    imageUrl: "https://files.catbox.moe/oh0ck2.jpg",
+    caption: "Global Web3 Partner Connect"
   },
   {
     id: "gal-4",
-    imageUrl: "/src/assets/images/lasu_solana_builders_1782036872337.jpg",
-    caption: "Solana Campus Builders"
+    imageUrl: "https://files.catbox.moe/v2mkuw.jpg",
+    caption: "Solana Campus Builders Cohort"
   },
   {
     id: "gal-5",
-    imageUrl: "/src/assets/images/lasu_community_gathering_1782036889029.jpg",
-    caption: "Community Builder Summit"
-  },
-  {
-    id: "gal-6",
-    imageUrl: "/src/assets/images/lasu_presentation_hall_1782036909062.jpg",
-    caption: "Hackathon Victory"
+    imageUrl: "https://files.catbox.moe/n5z5fw.jpg",
+    caption: "LASU Web3 Community Summit"
   }
 ];
 
