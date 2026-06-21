@@ -602,40 +602,28 @@ export default function App() {
 
         <hr className="border-[#2A2A2A]" />
 
-        {/* 6. GALLERY - Extreme 36px Rounded light moments cards with Picsum placeholders */}
-        <section id="gallery" className="py-24 space-y-12 scroll-mt-14">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-3"
-          >
-            <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight">
+        {/* 6. GALLERY - White background section */}
+        <section id="gallery" className="py-24 space-y-12 scroll-mt-14 bg-white">
+          <div className="space-y-3 max-w-[1200px] mx-auto px-6">
+            <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight">
               Our Moments
             </h2>
-            <p className="text-[16px] text-[#AAAAAA]">
+            <p className="text-[16px] text-gray-500">
               Real events. Real people. Real impact.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto px-6">
             {GALLERY_ITEMS.map((item, index) => (
-              <motion.a 
+              <a 
                 href={item.imageUrl}
                 key={item.id} 
-                initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.08, ease: [0.175, 0.885, 0.32, 1.275] }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                className="glightbox group bg-[#111111] rounded-[36px] p-4 border border-[#2A2A2A] overflow-hidden shadow-md hover:border-[#E8001D] hover:shadow-[0_0_20px_rgba(232,0,29,0.2)] transition-all block"
+                className="glightbox group bg-white rounded-[36px] p-4 border border-gray-200 overflow-hidden shadow-sm hover:border-[#E8001D] hover:shadow-md transition-all block"
                 data-gallery="club-moments"
                 data-description={item.caption}
               >
                 {/* Image Wrap */}
-                <div className="aspect-[3/2] overflow-hidden relative bg-[#1A1A1A] rounded-[24px]">
-                  {/* REPLACE: Insert real event photos here */}
+                <div className="aspect-[3/2] overflow-hidden relative bg-gray-100 rounded-[24px]">
                   <img 
                     src={item.imageUrl} 
                     alt={item.caption} 
@@ -643,30 +631,30 @@ export default function App() {
                     className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-300" 
                   />
                   {/* Overlay camera prompt */}
-                  <div className="absolute top-3 right-3 bg-[#0A0A0A]/90 backdrop-blur-md p-2 rounded-lg border border-[#2A2A2A] shadow-sm flex items-center justify-center">
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-2 rounded-lg border border-gray-200 shadow-sm flex items-center justify-center">
                     <Camera size={14} className="text-[#E8001D]" />
                   </div>
                 </div>
 
                 {/* Caption description */}
                 <div className="p-3.5 flex items-center justify-between">
-                  <span className="text-[13px] text-white font-bold">
+                  <span className="text-[13px] text-gray-900 font-bold">
                     {item.caption}
                   </span>
-                  <span className="text-[#AAAAAA] text-xs font-mono">
+                  <span className="text-gray-400 text-xs font-mono">
                     [{index + 1}/{GALLERY_ITEMS.length}]
                   </span>
                 </div>
-              </motion.a>
+              </a>
             ))}
           </div>
 
-          <div className="pt-4 flex justify-start">
+          <div className="pt-4 flex justify-start max-w-[1200px] mx-auto px-6">
             <a 
               href="https://x.com/BlockchainLASU" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-[#AAAAAA] hover:text-white transition-colors inline-flex items-center gap-2 group text-[13px] font-semibold"
+              className="text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-2 group text-[13px] font-semibold"
             >
               Follow us on X for more <span className="group-hover:translate-x-1.5 transition-transform text-[#E8001D]">→</span>
             </a>
