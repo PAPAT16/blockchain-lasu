@@ -223,7 +223,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans antialiased selection:bg-[#E8001D] selection:text-white">
+    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans antialiased selection:bg-[#4da1ea] selection:text-white">
       
       {/* 1. NAVBAR - Elevated & Soft Glazed Snow White */}
       <nav id="app-navbar" className="fixed top-0 left-0 right-0 h-14 bg-[#0A0A0A]/85 backdrop-blur-md border-b border-[#2A2A2A] z-50 transition-colors duration-200">
@@ -231,10 +231,10 @@ export default function App() {
           
           <button 
             onClick={() => handleScrollTo('home')} 
-            className="flex items-center gap-2 font-[700] text-white hover:text-[#E8001D] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
+            className="flex items-center gap-2 font-[700] text-white hover:text-[#4da1ea] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
             aria-label="BlockchainLASU Home"
           >
-            <Link size={18} className="text-[#E8001D] rotate-45" />
+            <img src="/logo.jpg" alt="BlockchainLASU" className="w-8 h-8 rounded-full object-cover" />
             <span>BlockchainLASU</span>
           </button>
 
@@ -252,7 +252,7 @@ export default function App() {
               >
                 {sectionId}
                 {activeSection === sectionId && (
-                  <span className="absolute bottom-[-1.5px] left-0 right-0 h-[2px] bg-[#E8001D] shadow-[0_0_10px_#E8001D] rounded-full animate-fade-in"></span>
+                  <span className="absolute bottom-[-1.5px] left-0 right-0 h-[2px] bg-[#4da1ea] shadow-[0_0_10px_#4da1ea] rounded-full animate-fade-in"></span>
                 )}
               </button>
             ))}
@@ -263,7 +263,7 @@ export default function App() {
             <button 
               id="nav-join-btn"
               onClick={handleJoinNow}
-              className="bg-[#E8001D] text-white text-[13px] font-[500] px-5 py-2 rounded-full hover:bg-[#FF3344] hover:shadow-[0_0_15px_rgba(232,0,29,0.5)] transition-all cursor-pointer shadow-[0_4px_12px_rgba(232,0,29,0.3)]"
+              className="bg-[#4da1ea] text-white text-[13px] font-[500] px-5 py-2 rounded-full hover:bg-[#6db8f5] hover:shadow-[0_0_15px_rgba(77,161,234,0.5)] transition-all cursor-pointer shadow-[0_4px_12px_rgba(77,161,234,0.3)]"
             >
               Join Now
             </button>
@@ -302,7 +302,7 @@ export default function App() {
                 <div className="col-span-2 pt-3 border-t border-[#2A2A2A]">
                   <button 
                     onClick={handleJoinNow}
-                    className="w-full bg-[#E8001D] text-white text-[14px] font-[500] py-2.5 rounded-full text-center hover:bg-[#FF3344] transition-all cursor-pointer shadow-[0_4px_12px_rgba(232,0,29,0.3)]"
+                    className="w-full bg-[#4da1ea] text-white text-[14px] font-[500] py-2.5 rounded-full text-center hover:bg-[#6db8f5] transition-all cursor-pointer shadow-[0_4px_12px_rgba(77,161,234,0.3)]"
                   >
                     Join Now
                   </button>
@@ -332,7 +332,7 @@ export default function App() {
                 transition={{ delay: 0.1, duration: 0.5, ease: [0.175, 0.885, 0.32, 1.275] }}
                 className="inline-flex items-center gap-2 bg-[#111111] px-4 py-1.5 rounded-full border border-[#2A2A2A] shadow-md"
               >
-                <span className="w-2 h-2 rounded-full bg-[#E8001D] animate-pulse shadow-[0_0_8px_#E8001D]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#4da1ea] animate-pulse shadow-[0_0_8px_#4da1ea]"></span>
                 <span className="font-sans text-[12px] font-semibold tracking-normal text-[#AAAAAA]">
                   Student-led · Lagos State University · Est. 2020
                 </span>
@@ -341,7 +341,7 @@ export default function App() {
               <h1 
                 className="text-[26px] sm:text-[36px] md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.08] tracking-tight font-sans"
               >
-                The Future of <span className="text-[#E8001D] font-bold drop-shadow-[0_0_12px_rgba(232,0,29,0.4)]">Web3</span> Starts at LASU
+                The Future of <span className="text-[#4da1ea] font-bold drop-shadow-[0_0_12px_rgba(77,161,234,0.4)]">Web3</span> Starts at LASU
               </h1>
 
               <p className="text-[16px] text-[#AAAAAA] leading-[1.6] max-w-[560px] font-normal">
@@ -353,7 +353,7 @@ export default function App() {
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handleJoinNow}
-                  className="bg-[#E8001D] text-white text-[14px] font-bold px-6 py-3 rounded-full hover:bg-[#FF3344] transition-all cursor-pointer shadow-[0_4px_14px_rgba(232,0,29,0.4)] hover:shadow-[0_0_18px_rgba(232,0,29,0.6)] animate-pulse"
+                  className="bg-[#4da1ea] text-white text-[14px] font-bold px-6 py-3 rounded-full hover:bg-[#6db8f5] transition-all cursor-pointer shadow-[0_4px_14px_rgba(77,161,234,0.4)] hover:shadow-[0_0_18px_rgba(77,161,234,0.6)] animate-pulse"
                 >
                   Join Now
                 </motion.button>
@@ -361,7 +361,7 @@ export default function App() {
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleScrollTo('events')}
-                  className="bg-transparent text-white border border-[#2A2A2A] text-[14px] font-[500] px-6 py-3 rounded-full hover:bg-[#111111] hover:border-[#E8001D] transition-all cursor-pointer"
+                  className="bg-transparent text-white border border-[#2A2A2A] text-[14px] font-[500] px-6 py-3 rounded-full hover:bg-[#111111] hover:border-[#4da1ea] transition-all cursor-pointer"
                 >
                   Explore Events
                 </motion.button>
@@ -373,11 +373,11 @@ export default function App() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.175, 0.885, 0.32, 1.275] }}
-              className="lg:col-span-5 bg-[#111111] p-6 sm:p-8 rounded-[24px] sm:rounded-[36px] border border-[#2A2A2A] hover:border-[#E8001D]/45 shadow-[0_0_20px_rgba(232,0,29,0.1)] transition-all duration-350 space-y-6"
+              className="lg:col-span-5 bg-[#111111] p-6 sm:p-8 rounded-[24px] sm:rounded-[36px] border border-[#2A2A2A] hover:border-[#4da1ea]/45 shadow-[0_0_20px_rgba(77,161,234,0.1)] transition-all duration-350 space-y-6"
             >
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-1.5 bg-[#E8001D]/20 text-[#FF3344] border border-[#E8001D]/30 text-[10px] font-bold px-2.5 py-1.5 rounded-full uppercase">
-                  <Activity size={12} className="text-[#FF3344] animate-pulse" />
+                <div className="inline-flex items-center gap-1.5 bg-[#4da1ea]/20 text-[#6db8f5] border border-[#4da1ea]/30 text-[10px] font-bold px-2.5 py-1.5 rounded-full uppercase">
+                  <Activity size={12} className="text-[#6db8f5] animate-pulse" />
                   <span>Membership Intake Open</span>
                 </div>
                 <h3 className="text-[20px] font-bold text-white">Apply to the cohort</h3>
@@ -391,10 +391,10 @@ export default function App() {
                 <motion.button 
                   whileHover={{ scale: 1.01, x: 2 }}
                   onClick={handleJoinNow}
-                  className="w-full bg-[#151515] hover:bg-[#181818] border border-[#2A2A2A] p-3 rounded-[14px] text-left flex items-center justify-between text-[13px] text-white font-medium transition-all group hover:border-[#E8001D]/50"
+                  className="w-full bg-[#151515] hover:bg-[#181818] border border-[#2A2A2A] p-3 rounded-[14px] text-left flex items-center justify-between text-[13px] text-white font-medium transition-all group hover:border-[#4da1ea]/50"
                 >
                   <span>Fill application workflow</span>
-                  <ArrowRight size={14} className="text-[#AAAAAA] group-hover:text-[#E8001D] group-hover:translate-x-1.5 transition-all" />
+                  <ArrowRight size={14} className="text-[#AAAAAA] group-hover:text-[#4da1ea] group-hover:translate-x-1.5 transition-all" />
                 </motion.button>
               </div>
 
@@ -421,7 +421,7 @@ export default function App() {
               className="text-[#AAAAAA] hover:text-white transition-colors inline-flex items-center gap-1.5 text-[13px] font-medium group"
               aria-label="X (formerly Twitter)"
             >
-              X: <span className="text-white font-semibold group-hover:underline decoration-2 decoration-[#E8001D]">@BlockchainLASU</span>
+              X: <span className="text-white font-semibold group-hover:underline decoration-2 decoration-[#4da1ea]">@BlockchainLASU</span>
               <ExternalLink size={12} className="text-[#AAAAAA]" />
             </a>
           </motion.div>
@@ -438,7 +438,7 @@ export default function App() {
               {PARTNER_LOGOS.map((pt, idx) => (
                 <span 
                   key={idx} 
-                  className="text-gray-500 font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#E8001D] transition-colors"
+                  className="text-gray-500 font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#4da1ea] transition-colors"
                 >
                   {pt.name}
                 </span>
@@ -447,7 +447,7 @@ export default function App() {
               {PARTNER_LOGOS.map((pt, idx) => (
                 <span 
                   key={`dup-${idx}`} 
-                  className="text-gray-500 font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#E8001D] transition-colors"
+                  className="text-gray-500 font-semibold text-[13px] uppercase tracking-widest select-none hover:text-[#4da1ea] transition-colors"
                 >
                   /* REPLACE: real partner logo */
                   {pt.name}
@@ -496,14 +496,14 @@ export default function App() {
             </div>
 
             {/* Bottom-Right: Join/CTA */}
-            <div className="bg-gradient-to-br from-[#E8001D] to-[#9B0011] p-6 md:p-8 rounded-[24px] md:rounded-[36px] shadow-lg flex flex-col justify-center items-center text-center">
+            <div className="bg-gradient-to-br from-[#4da1ea] to-[#2e6fa3] p-6 md:p-8 rounded-[24px] md:rounded-[36px] shadow-lg flex flex-col justify-center items-center text-center">
               <h3 className="text-[22px] font-bold text-white mb-4">Ready to build?</h3>
               <p className="text-[14px] text-white/90 mb-6 max-w-[280px]">
                 Join 300+ students actively learning, coding, and deploying decentralized applications.
               </p>
               <button 
                 onClick={handleJoinNow}
-                className="bg-white text-[#E8001D] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-all shadow-md"
+                className="bg-white text-[#4da1ea] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-all shadow-md"
               >
                 Join Now
               </button>
@@ -536,7 +536,7 @@ export default function App() {
             <div>
               <button 
                 onClick={() => handleScrollTo('contact')}
-                className="bg-transparent border border-[#2A2A2A] text-white text-[13px] font-[500] px-5 py-2.5 rounded-full hover:bg-[#111111] hover:border-[#E8001D] transition-all cursor-pointer"
+                className="bg-transparent border border-[#2A2A2A] text-white text-[13px] font-[500] px-5 py-2.5 rounded-full hover:bg-[#111111] hover:border-[#4da1ea] transition-all cursor-pointer"
               >
                 Invite Us to Your Event
               </button>
@@ -556,8 +556,8 @@ export default function App() {
                   whileHover={{ y: -6, scale: 1.01 }}
                   className={`rounded-[24px] md:rounded-[36px] flex flex-col relative shadow-md transition-all duration-300 overflow-hidden ${
                     isOrchidFeatured 
-                      ? 'bg-gradient-to-tr from-[#9B0011] to-[#E8001D] text-white border border-[#E8001D]/40 shadow-[0_0_30px_rgba(232,0,29,0.25)] hover:shadow-[0_0_40px_rgba(232,0,29,0.45)]' 
-                      : 'bg-[#111111] border border-[#2A2A2A] hover:border-[#E8001D]/50 text-white hover:shadow-[0_0_20px_rgba(232,0,29,0.1)]'
+                      ? 'bg-gradient-to-tr from-[#2e6fa3] to-[#4da1ea] text-white border border-[#4da1ea]/40 shadow-[0_0_30px_rgba(77,161,234,0.25)] hover:shadow-[0_0_40px_rgba(77,161,234,0.45)]' 
+                      : 'bg-[#111111] border border-[#2A2A2A] hover:border-[#4da1ea]/50 text-white hover:shadow-[0_0_20px_rgba(77,161,234,0.1)]'
                   }`}
                 >
                   {evt.imageUrl && (
@@ -574,10 +574,10 @@ export default function App() {
                     <div className="flex items-center justify-between">
                       <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full ${
                         isOrchidFeatured 
-                          ? 'bg-white text-[#E8001D]' 
+                          ? 'bg-white text-[#4da1ea]' 
                           : 'bg-[#2A2A2A] text-[#AAAAAA] border border-[#333333]'
                       }`}>
-                        {evt.status === 'UPCOMING' && <span className="w-1.5 h-1.5 rounded-full bg-[#E8001D] animate-pulse"></span>}
+                        {evt.status === 'UPCOMING' && <span className="w-1.5 h-1.5 rounded-full bg-[#4da1ea] animate-pulse"></span>}
                         {evt.status} · {evt.category}
                       </span>
                       <span className={`font-mono text-[11px] font-semibold ${
@@ -605,10 +605,10 @@ export default function App() {
                       <div className="pt-6 mt-6 border-t border-white/20">
                         <button 
                           onClick={handleJoinNow}
-                          className="bg-white text-black text-[13px] font-bold px-5 py-2.5 rounded-full hover:bg-[#E8001D] hover:text-white transition-all cursor-pointer inline-flex items-center gap-2 shadow-lg"
+                          className="bg-white text-black text-[13px] font-bold px-5 py-2.5 rounded-full hover:bg-[#4da1ea] hover:text-white transition-all cursor-pointer inline-flex items-center gap-2 shadow-lg"
                         >
                           <span>Register Now</span>
-                          <ArrowRight size={14} className="text-[#E8001D]" />
+                          <ArrowRight size={14} className="text-[#4da1ea]" />
                         </button>
                       </div>
                     )}
@@ -688,7 +688,7 @@ export default function App() {
             {TEAM_MEMBERS.map((member, idx) => (
               <div 
                 key={member.id} 
-                className="bg-[#111111] p-3 md:p-4 rounded-[20px] md:rounded-[32px] border border-[#2A2A2A] hover:border-[#E8001D] transition-all duration-300 group fade-up-element opacity-0 translate-y-8"
+                className="bg-[#111111] p-3 md:p-4 rounded-[20px] md:rounded-[32px] border border-[#2A2A2A] hover:border-[#4da1ea] transition-all duration-300 group fade-up-element opacity-0 translate-y-8"
                 style={{ transitionDelay: `${idx * 0.08}s` }}
               >
                 {/* Image */}
@@ -703,7 +703,7 @@ export default function App() {
                 {/* Details */}
                 <div className="px-1 md:px-2">
                   <h3 className="text-[15px] md:text-[18px] font-bold text-white">{member.name}</h3>
-                  <p className="text-[12px] md:text-[14px] text-[#E8001D] font-medium mb-2 md:mb-4">{member.role}</p>
+                  <p className="text-[12px] md:text-[14px] text-[#4da1ea] font-medium mb-2 md:mb-4">{member.role}</p>
                   <div className="border-t border-[#2A2A2A] pt-2 md:pt-4">
                     <p className="text-[12px] md:text-[13px] text-[#AAAAAA] leading-relaxed">
                       Passionate member driving our community forward through dedication, innovation, and leadership within the LASU Blockchain ecosystem.
@@ -745,7 +745,7 @@ export default function App() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.06, ease: [0.175, 0.885, 0.32, 1.275] }}
                 whileHover={{ y: -6, scale: 1.01 }}
-                className="bg-[#111111] p-6 rounded-[28px] border border-[#2A2A2A] hover:border-[#E8001D] shadow-md flex flex-col justify-between transition-all duration-300"
+                className="bg-[#111111] p-6 rounded-[28px] border border-[#2A2A2A] hover:border-[#4da1ea] shadow-md flex flex-col justify-between transition-all duration-300"
               >
                 <div className="space-y-2">
                   <h3 className="text-[15px] font-bold text-white">{partner.name}</h3>
@@ -761,14 +761,14 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ scale: 1.01 }}
-              className="bg-transparent border-2 border-dashed border-[#2A2A2A] hover:border-[#E8001D]/70 p-6 rounded-[28px] flex flex-col items-center justify-center text-center space-y-4 transition-all"
+              className="bg-transparent border-2 border-dashed border-[#2A2A2A] hover:border-[#4da1ea]/70 p-6 rounded-[28px] flex flex-col items-center justify-center text-center space-y-4 transition-all"
             >
               <span className="text-[13px] text-[#AAAAAA] font-medium">
                 Interested in partnering?
               </span>
               <button 
                 onClick={handleBecomePartner}
-                className="bg-[#E8001D] text-white text-[13px] font-[510] px-4 py-2 rounded-full hover:bg-[#FF3344] hover:shadow-[0_0_15px_rgba(232,0,29,0.5)] transition-all cursor-pointer shadow-[0_4px_12px_rgba(232,0,29,0.3)]"
+                className="bg-[#4da1ea] text-white text-[13px] font-[510] px-4 py-2 rounded-full hover:bg-[#6db8f5] hover:shadow-[0_0_15px_rgba(77,161,234,0.5)] transition-all cursor-pointer shadow-[0_4px_12px_rgba(77,161,234,0.3)]"
               >
                 Get in Touch
               </button>
@@ -787,7 +787,7 @@ export default function App() {
             </span>
             <button 
               onClick={handleBecomePartner}
-              className="bg-transparent border border-[#2A2A2A] text-white text-[13px] font-[500] px-5 py-2 rounded-full hover:bg-[#111111] hover:border-[#E8001D] transition-all flex items-center gap-1.5 cursor-pointer"
+              className="bg-transparent border border-[#2A2A2A] text-white text-[13px] font-[500] px-5 py-2 rounded-full hover:bg-[#111111] hover:border-[#4da1ea] transition-all flex items-center gap-1.5 cursor-pointer"
             >
               Partner With Us
             </button>
@@ -849,7 +849,7 @@ export default function App() {
                     transition={{ duration: 0.4, delay: idx * 0.05 }}
                     className="flex items-start gap-3"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8001D] shadow-[0_0_8px_#E8001D] mt-2 flex-shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#4da1ea] shadow-[0_0_8px_#4da1ea] mt-2 flex-shrink-0"></span>
                     <span className="text-[15px] text-white font-medium leading-tight">{benefit}</span>
                   </motion.div>
                 ))}
@@ -868,10 +868,10 @@ export default function App() {
                 
                 {joinSuccess ? (
                   /* Form execution receipt view */
-                  <div className="border-l-[4px] border-[#E8001D] pl-6 py-2 space-y-6">
+                  <div className="border-l-[4px] border-[#4da1ea] pl-6 py-2 space-y-6">
                     <div className="space-y-2">
                       <h3 className="text-[22px] font-bold text-white flex items-center gap-2">
-                        <Sparkles size={22} className="text-[#E8001D] animate-pulse" />
+                        <Sparkles size={22} className="text-[#4da1ea] animate-pulse" />
                         <span>Application Received!</span>
                       </h3>
                       <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
@@ -880,20 +880,20 @@ export default function App() {
                     </div>
 
                     <div className="bg-[#181818] p-5 rounded-[14px] border border-[#2E2E2E] font-mono text-[12px] text-[#AAAAAA] space-y-2">
-                      <div><span className="text-[#FF3344]">Applicant://</span> {joinData.fullName}</div>
-                      <div><span className="text-[#FF3344]">Matric_No://</span> {joinData.studentId}</div>
-                      <div><span className="text-[#FF3344]">Dept_Level://</span> {joinData.facultyDept} ([{joinData.level}L])</div>
-                      <div><span className="text-[#FF3344]">Exp_Level://</span> {joinData.priorKnowledge}</div>
-                      <div><span className="text-[#FF3344]">Status_Dot://</span> Active Processing</div>
+                      <div><span className="text-[#6db8f5]">Applicant://</span> {joinData.fullName}</div>
+                      <div><span className="text-[#6db8f5]">Matric_No://</span> {joinData.studentId}</div>
+                      <div><span className="text-[#6db8f5]">Dept_Level://</span> {joinData.facultyDept} ([{joinData.level}L])</div>
+                      <div><span className="text-[#6db8f5]">Exp_Level://</span> {joinData.priorKnowledge}</div>
+                      <div><span className="text-[#6db8f5]">Status_Dot://</span> Active Processing</div>
                     </div>
 
                     <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
-                      We'll inspect your details and be in touch via email (<span className="text-[#E8001D] font-semibold">{joinData.email}</span>) within 48 hours with onboarding steps!
+                      We'll inspect your details and be in touch via email (<span className="text-[#4da1ea] font-semibold">{joinData.email}</span>) within 48 hours with onboarding steps!
                     </p>
 
                     <button 
                       onClick={() => setJoinSuccess(false)}
-                      className="text-[12px] font-semibold text-[#AAAAAA] hover:text-[#FF3344] underline"
+                      className="text-[12px] font-semibold text-[#AAAAAA] hover:text-[#6db8f5] underline"
                     >
                       Fill another application
                     </button>
@@ -911,7 +911,7 @@ export default function App() {
                           value={joinData.fullName}
                           onChange={(e) => setJoinData({...joinData, fullName: e.target.value})}
                           placeholder="Felix Adebayo"
-                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                         />
                       </div>
 
@@ -927,7 +927,7 @@ export default function App() {
                           value={joinData.studentId}
                           onChange={(e) => setJoinData({...joinData, studentId: e.target.value})}
                           placeholder="240591001"
-                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] font-mono transition-all"
+                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] font-mono transition-all"
                         />
                       </div>
                     </div>
@@ -943,7 +943,7 @@ export default function App() {
                           value={joinData.facultyDept}
                           onChange={(e) => setJoinData({...joinData, facultyDept: e.target.value})}
                           placeholder="Science / Computer Science"
-                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                         />
                       </div>
 
@@ -954,7 +954,7 @@ export default function App() {
                           id="join-level"
                           value={joinData.level}
                           onChange={(e) => setJoinData({...joinData, level: e.target.value})}
-                          className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] cursor-pointer transition-all appearance-none"
+                          className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] cursor-pointer transition-all appearance-none"
                         >
                           <option value="100" className="bg-[#111111] text-white">100 Level</option>
                           <option value="200" className="bg-[#111111] text-white">200 Level</option>
@@ -976,7 +976,7 @@ export default function App() {
                           value={joinData.email}
                           onChange={(e) => setJoinData({...joinData, email: e.target.value})}
                           placeholder="felix@student.lasu.edu.ng"
-                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                         />
                       </div>
 
@@ -990,7 +990,7 @@ export default function App() {
                           value={joinData.phoneNumber}
                           onChange={(e) => setJoinData({...joinData, phoneNumber: e.target.value})}
                           placeholder="+234 812 345 6789"
-                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                          className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                         />
                       </div>
                     </div>
@@ -1002,7 +1002,7 @@ export default function App() {
                         id="join-prior-knowledge"
                         value={joinData.priorKnowledge}
                         onChange={(e) => setJoinData({...joinData, priorKnowledge: e.target.value})}
-                        className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] cursor-pointer transition-all appearance-none"
+                        className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] cursor-pointer transition-all appearance-none"
                       >
                         <option value="None" className="bg-[#111111] text-white">None (Interested to Learn)</option>
                         <option value="Beginner" className="bg-[#111111] text-white">Beginner (Know basic terminologies)</option>
@@ -1021,7 +1021,7 @@ export default function App() {
                         onChange={(e) => setJoinData({...joinData, reason: e.target.value})}
                         rows={4}
                         placeholder="State your expectations, goals, or technical interests in joining..."
-                        className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] resize-none focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                        className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] resize-none focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                       />
                     </div>
 
@@ -1029,7 +1029,7 @@ export default function App() {
                     <button 
                       type="submit"
                       disabled={joinLoading}
-                      className="w-full bg-[#E8001D] h-12 text-white text-[14px] font-bold rounded-full hover:bg-[#FF3344] hover:shadow-[0_0_15px_rgba(232,0,29,0.5)] disabled:opacity-50 transition-all inline-flex items-center justify-center cursor-pointer shadow-[0_4px_12px_rgba(232,0,29,0.35)]"
+                      className="w-full bg-[#4da1ea] h-12 text-white text-[14px] font-bold rounded-full hover:bg-[#6db8f5] hover:shadow-[0_0_15px_rgba(77,161,234,0.5)] disabled:opacity-50 transition-all inline-flex items-center justify-center cursor-pointer shadow-[0_4px_12px_rgba(77,161,234,0.35)]"
                     >
                       {joinLoading ? 'Recording Application...' : 'Submit Application'}
                     </button>
@@ -1073,16 +1073,16 @@ export default function App() {
               
               {inviteSuccess ? (
                 /* Invitation Received view */
-                <div className="border-l-[4px] border-[#E8001D] pl-6 py-2 space-y-4">
+                <div className="border-l-[4px] border-[#4da1ea] pl-6 py-2 space-y-4">
                   <h3 className="text-[18px] font-bold text-white flex items-center gap-2">
-                    <Check className="text-[#E8001D]" size={18} />
+                    <Check className="text-[#4da1ea]" size={18} />
                     <span>Invitation received.</span>
                   </h3>
                   <p className="text-[13px] text-[#AAAAAA] leading-relaxed">
                     We've received your coordination request for the event <span className="text-white font-semibold">"{inviteData.eventName}"</span>.
                   </p>
                   <p className="text-[13px] text-[#AAAAAA]">
-                    The Secretariat will inspect the itinerary and reach back to <span className="text-[#E8001D] font-semibold">{inviteData.contactEmail}</span> inside 48 hours to confirm availability and discutir arrangements.
+                    The Secretariat will inspect the itinerary and reach back to <span className="text-[#4da1ea] font-semibold">{inviteData.contactEmail}</span> inside 48 hours to confirm availability and discutir arrangements.
                   </p>
                   <button 
                     onClick={() => setInviteSuccess(false)}
@@ -1103,7 +1103,7 @@ export default function App() {
                       value={inviteData.eventName}
                       onChange={(e) => setInviteData({...inviteData, eventName: e.target.value})}
                       placeholder="e.g. Lagos Tech Summit"
-                      className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                      className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                     />
                   </div>
 
@@ -1117,7 +1117,7 @@ export default function App() {
                         required
                         value={inviteData.eventDate}
                         onChange={(e) => setInviteData({...inviteData, eventDate: e.target.value})}
-                        className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                        className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                       />
                     </div>
 
@@ -1128,7 +1128,7 @@ export default function App() {
                         id="invite-event-type"
                         value={inviteData.eventType}
                         onChange={(e) => setInviteData({...inviteData, eventType: e.target.value})}
-                        className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] cursor-pointer transition-all appearance-none"
+                        className="w-full bg-[#151515] text-white border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] cursor-pointer transition-all appearance-none"
                       >
                         <option value="Conference" className="bg-[#111111] text-white">Conference</option>
                         <option value="Panel" className="bg-[#111111] text-white">Panel</option>
@@ -1150,7 +1150,7 @@ export default function App() {
                         value={inviteData.contactNameOrg}
                         onChange={(e) => setInviteData({...inviteData, contactNameOrg: e.target.value})}
                         placeholder="Emeka Okafor (Tech Lagos)"
-                        className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                        className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                       />
                     </div>
 
@@ -1164,7 +1164,7 @@ export default function App() {
                         value={inviteData.contactEmail}
                         onChange={(e) => setInviteData({...inviteData, contactEmail: e.target.value})}
                         placeholder="speaker@techlagos.org"
-                        className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                        className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                       />
                     </div>
                   </div>
@@ -1179,7 +1179,7 @@ export default function App() {
                       onChange={(e) => setInviteData({...inviteData, description: e.target.value})}
                       rows={4}
                       placeholder="Outline speaking details, estimated delegation size, and how LASU Blockchain members can participate..."
-                      className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] resize-none focus:outline-none focus:ring-1 focus:ring-[#E8001D] focus:border-[#E8001D] transition-all"
+                      className="w-full bg-[#151515] text-white placeholder-[#777777] border border-[#2A2A2A] text-sm p-3 rounded-[14px] resize-none focus:outline-none focus:ring-1 focus:ring-[#4da1ea] focus:border-[#4da1ea] transition-all"
                     />
                   </div>
 
@@ -1187,7 +1187,7 @@ export default function App() {
                   <button 
                     type="submit"
                     disabled={inviteLoading}
-                    className="w-full bg-[#E8001D] h-12 text-white text-[14px] font-bold rounded-full hover:bg-[#FF3344] hover:shadow-[0_0_15px_rgba(232,0,29,0.5)] disabled:opacity-50 transition-all inline-flex items-center justify-center cursor-pointer shadow-[0_4px_12px_rgba(232,0,29,0.35)]"
+                    className="w-full bg-[#4da1ea] h-12 text-white text-[14px] font-bold rounded-full hover:bg-[#6db8f5] hover:shadow-[0_0_15px_rgba(77,161,234,0.5)] disabled:opacity-50 transition-all inline-flex items-center justify-center cursor-pointer shadow-[0_4px_12px_rgba(77,161,234,0.35)]"
                   >
                     {inviteLoading ? 'Sending Invitation...' : 'Send Invitation'}
                   </button>
@@ -1240,7 +1240,7 @@ export default function App() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
                   whileHover={{ y: -4, scale: 1.02 }}
-                  className="bg-[#111111] rounded-[20px] md:rounded-[28px] p-3 md:p-4 border border-[#2A2A2A] shadow-md hover:border-[#E8001D] hover:shadow-[0_0_15px_rgba(232,0,29,0.15)] transition-all text-center flex flex-col justify-center items-center h-20 md:h-24"
+                  className="bg-[#111111] rounded-[20px] md:rounded-[28px] p-3 md:p-4 border border-[#2A2A2A] shadow-md hover:border-[#4da1ea] hover:shadow-[0_0_15px_rgba(77,161,234,0.15)] transition-all text-center flex flex-col justify-center items-center h-20 md:h-24"
                 >
                   <span className="text-[12px] md:text-[14px] font-bold text-white">{soc.label}</span>
                   <span className="text-[9px] md:text-[10px] text-[#AAAAAA] font-mono mt-1">/* REPLACE: social */</span>
@@ -1258,7 +1258,7 @@ export default function App() {
             >
               <div className="space-y-3 mb-6">
                 <span className="inline-flex items-center gap-1.5 bg-[#222222] text-white text-[10px] font-bold px-2.5 py-1.5 rounded-full uppercase">
-                  <Mail size={12} className="text-[#E8001D]" />
+                  <Mail size={12} className="text-[#4da1ea]" />
                   <span>Club Newsletter</span>
                 </span>
                 <h3 className="text-[18px] md:text-[20px] font-bold text-white">Consensus Bulletin</h3>
@@ -1268,8 +1268,8 @@ export default function App() {
               </div>
 
               {newsletterSubmitted ? (
-                <div className="bg-[#2A2A2A] p-4 rounded-[14px] border border-[#3A3A3A] text-[13px] text-[#E8001D] font-medium flex items-center gap-2">
-                  <Sparkle size={14} className="text-[#E8001D] animate-pulse" />
+                <div className="bg-[#2A2A2A] p-4 rounded-[14px] border border-[#3A3A3A] text-[13px] text-[#4da1ea] font-medium flex items-center gap-2">
+                  <Sparkle size={14} className="text-[#4da1ea] animate-pulse" />
                   <span>Swell! Thank you for subscribing. Check your mail soon!</span>
                 </div>
               ) : (
@@ -1280,11 +1280,11 @@ export default function App() {
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     placeholder="Enter school email"
-                    className="flex-grow bg-[#151515] border border-[#2A2A2A] text-white placeholder-[#777777] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#E8001D] transition-all"
+                    className="flex-grow bg-[#151515] border border-[#2A2A2A] text-white placeholder-[#777777] text-sm p-3 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-[#4da1ea] transition-all"
                   />
                   <button 
                     type="submit"
-                    className="bg-[#E8001D] text-white hover:bg-[#FF3344] hover:shadow-[0_0_15px_rgba(232,0,29,0.5)] text-[13px] font-bold px-6 py-3 rounded-full transition-all cursor-pointer shadow-md inline-flex items-center justify-center"
+                    className="bg-[#4da1ea] text-white hover:bg-[#6db8f5] hover:shadow-[0_0_15px_rgba(77,161,234,0.5)] text-[13px] font-bold px-6 py-3 rounded-full transition-all cursor-pointer shadow-md inline-flex items-center justify-center"
                   >
                     Subscribe
                   </button>
@@ -1303,9 +1303,9 @@ export default function App() {
           <div className="md:col-span-5 space-y-4 fade-up-element opacity-0 translate-y-8">
             <button 
               onClick={() => handleScrollTo('home')} 
-              className="flex items-center gap-2 font-[700] text-gray-900 hover:text-[#E8001D] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
+              className="flex items-center gap-2 font-[700] text-gray-900 hover:text-[#4da1ea] transition-colors focus:outline-none text-[16px] tracking-tight text-left"
             >
-              <Link size={18} className="text-[#E8001D] rotate-45" />
+              <img src="/logo.jpg" alt="BlockchainLASU" className="w-8 h-8 rounded-full object-cover" />
               <span>BlockchainLASU</span>
             </button>
             <p className="text-[13px] text-gray-500 leading-relaxed max-w-[340px]">
@@ -1321,7 +1321,7 @@ export default function App() {
                 <button 
                   key={link}
                   onClick={() => handleScrollTo(link)} 
-                  className="text-left text-[13px] text-gray-500 hover:text-[#E8001D] hover:underline decoration-[#E8001D] hover:font-bold transition-all focus:outline-none capitalize cursor-pointer"
+                  className="text-left text-[13px] text-gray-500 hover:text-[#4da1ea] hover:underline decoration-[#4da1ea] hover:font-bold transition-all focus:outline-none capitalize cursor-pointer"
                 >
                   {link}
                 </button>
@@ -1333,11 +1333,11 @@ export default function App() {
           <div className="md:col-span-3 space-y-3 fade-up-element opacity-0 translate-y-8" style={{ transitionDelay: '0.2s' }}>
             <h4 className="font-sans text-[11px] text-gray-500 font-bold tracking-wider uppercase">Social Channels</h4>
             <div className="flex flex-col gap-2 text-[13px] text-gray-500">
-              <a href="https://x.com/BlockchainLASU" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">Twitter/X</a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">Instagram</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">LinkedIn</a>
-              <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">Telegram</a>
-              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8001D] hover:underline decoration-[#E8001D] transition-colors">WhatsApp</a>
+              <a href="https://x.com/BlockchainLASU" target="_blank" rel="noopener noreferrer" className="hover:text-[#4da1ea] hover:underline decoration-[#4da1ea] transition-colors">Twitter/X</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#4da1ea] hover:underline decoration-[#4da1ea] transition-colors">Instagram</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#4da1ea] hover:underline decoration-[#4da1ea] transition-colors">LinkedIn</a>
+              <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="hover:text-[#4da1ea] hover:underline decoration-[#4da1ea] transition-colors">Telegram</a>
+              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#4da1ea] hover:underline decoration-[#4da1ea] transition-colors">WhatsApp</a>
             </div>
           </div>
 
@@ -1347,7 +1347,7 @@ export default function App() {
         <div className="max-w-[1200px] mx-auto px-6 pt-8 border-t border-gray-200 fade-up-element opacity-0 translate-y-8" style={{ transitionDelay: '0.3s' }}>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-gray-500">
             <span>© 2026 Blockchain Club, Lagos State University. All rights reserved.</span>
-            <span>Built by <a href="https://lumabrand.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-[#E8001D] underline">lumabrand</a> for LASU Blockchain Community</span>
+            <span>Built by <a href="https://lumabrand.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-[#4da1ea] underline">lumabrand</a> for LASU Blockchain Community</span>
           </div>
         </div>
       </footer>

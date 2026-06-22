@@ -8,8 +8,8 @@
   /* Dark Crimson System Tokens */
   --color-bg-pure: #0A0A0A;
   --color-surface-card: #111111;
-  --color-accent-red: #E8001D;
-  --color-accent-rose: #FF3344;
+  --color-accent-red: #4da1ea;
+  --color-accent-rose: #6db8f5;
   --color-border-dark: #2A2A2A;
   --color-text-muted: #AAAAAA;
   --color-text-primary: #FFFFFF;
@@ -20,7 +20,7 @@
   --color-card: #111111;
   --color-input: #151515;
   --color-border-sm: #2A2A2A;
-  --color-border-md: #E8001D;
+  --color-border-md: #4da1ea;
   --color-muted: #AAAAAA;
   --color-secondary: #AAAAAA;
   --color-tertiary: #CCCCCC;
@@ -29,7 +29,7 @@
   /* Shadows & Neon Glows */
   --shadow-sm: rgba(0, 0, 0, 0.4) 0px 2px 4px 0px;
   --shadow-md: rgba(0, 0, 0, 0.2) 0px 0px 12px 0px inset;
-  --shadow-glow: 0 0 20px rgba(232, 0, 29, 0.45);
+  --shadow-glow: 0 0 20px rgba(77, 161, 234, 0.45);
   --shadow-subtle: rgb(35, 37, 42) 0px 0px 0px 1px inset;
   --shadow-subtle-2: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
   --shadow-subtle-3: rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px;
@@ -72,7 +72,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E8001D;
+  background: #4da1ea;
 }
 
 /* Continuously looping scrolling bands */
